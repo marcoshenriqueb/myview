@@ -24,8 +24,6 @@ module.exports = function(env) {
       new webpack.DefinePlugin({
         'process.env': require('./../env').dev
       }),
-      // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
-      new webpack.HotModuleReplacementPlugin(),
       new webpack.NoEmitOnErrorsPlugin(),
       // https://github.com/ampedandwired/html-webpack-plugin
       new FriendlyErrorsPlugin()
@@ -33,7 +31,7 @@ module.exports = function(env) {
   }
   return {
     entry: {
-      app: resolve('home/static/home/js/home.js')
+      home: resolve('home/static/home/js/home.js')
     },
     devtool: env !== 'production' ? '#cheap-module-eval-source-map' : '#source-map',
     output: {
@@ -41,6 +39,7 @@ module.exports = function(env) {
       publicPath: '/static/',
       filename: '[name].js'
     },
+    watch: env !== 'production' ? true : false,
     module: {
     rules: [
         {
@@ -49,10 +48,18 @@ module.exports = function(env) {
           include: [resolve('src'), resolve('test')]
         },
         {
-          test: /\.styl$/,
+          test: /\.css$/,
           use: [
             'style-loader',
             'css-loader'
+          ]
+        },
+        {
+          test: /\.styl$/,
+          use: [
+            'style-loader',
+            'css-loader',
+            'stylus-loader',
           ]
         }
       ]
