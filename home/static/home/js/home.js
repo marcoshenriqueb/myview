@@ -28,10 +28,17 @@ document.addEventListener('DOMContentLoaded', () => {
     paraxify('.paraxify');
 
     const adjustProjectContainers = () => {
+        const w = window.innerWidth;
         const containers = document.querySelectorAll('.project-container');
-        containers.forEach((c) => {
-            c.style.height = (c.querySelector('.project_big img').clientHeight - 2) + 'px';
-        });
+        if (w > 868) {
+            containers.forEach((c) => {
+                c.style.height = (c.querySelector('.project_big img').clientHeight - 2) + 'px';
+            });
+        } else {
+            containers.forEach((c) => {
+                c.style.height = null;
+            });
+        }
     };
     adjustProjectContainers();
 
