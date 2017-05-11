@@ -8,6 +8,7 @@
 		<!--[if lte IE 9]>
 				<![endif]-->
 		<title>My View</title>
+		<link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		{% load static %}
 		<script type='text/javascript' src='{% static "home.js" %}'></script>
@@ -37,7 +38,7 @@
 				<a href="#"><li>Cursos</li></a>
 			</ul>
 		</header>
-		<div class="top">
+		<div class="top triangles">
 			<div class="video-container">
 				<div class="filter"></div>
 				<video autoplay loop class="full-w">
@@ -45,8 +46,96 @@
 					<source src="{% static 'videos/people-dancing.webm' %}" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
 				</video>
 			</div>
-			<div class="flex-column min-full-size">
-				<h1>Drones</h1>
+			<div class="flex-column min-full-size justify-center">
+				<h1 class="title">Serviços com Drones</h1>
+			</div>
+		</div>
+		<div class="flex justify-center section-title_container">
+			<h2 class="title dark">Quem Somos</h2>
+		</div>
+		<div class="flex-column justify-center description">
+			<div class="description-content">
+				<h4 class="subtitle">Uma breve introdução</h4>
+				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam debitis voluptatem porro ut quod hic dolorem ullam aliquam accusamus, beatae quam deleniti quidem minima exercitationem. Cum rerum id, accusamus ea! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim distinctio, sequi officia quibusdam a accusantium rerum quis vel ad fuga. Earum itaque deleniti doloribus veniam accusamus aliquid corrupti provident adipisci.</p>
+			</div>
+		</div>
+		<div class="flex paraxify justify-center triangles service-title">
+			<div class="overlay"></div>
+			<h2 class="title white big">Nossos Serviços</h2>
+		</div>
+		<div class="flex full-w service-item_container">
+			<div class="flex-column service-item">
+				<i class="fa fa-3x fa-envelope-open-o"></i>
+				<span class="dark-label">Web Design</span>
+				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+			</div>
+			<div class="flex-column service-item">
+				<i class="fa fa-3x fa-envelope-open-o"></i>
+				<span class="dark-label">Web Design</span>
+				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+			</div>
+			<div class="flex-column service-item">
+				<i class="fa fa-3x fa-envelope-open-o"></i>
+				<span class="dark-label">Web Design</span>
+				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+			</div>
+			<div class="flex-column service-item">
+				<i class="fa fa-3x fa-envelope-open-o"></i>
+				<span class="dark-label">Web Design</span>
+				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+			</div>
+			<div class="flex-column service-item">
+				<i class="fa fa-3x fa-envelope-open-o"></i>
+				<span class="dark-label">Web Design</span>
+				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+			</div>
+			<div class="flex-column service-item">
+				<i class="fa fa-3x fa-envelope-open-o"></i>
+				<span class="dark-label">Web Design</span>
+				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+			</div>
+			<div class="flex-column service-item">
+				<i class="fa fa-3x fa-envelope-open-o"></i>
+				<span class="dark-label">Web Design</span>
+				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+			</div>
+			<div class="flex-column service-item">
+				<i class="fa fa-3x fa-envelope-open-o"></i>
+				<span class="dark-label">Web Design</span>
+				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+			</div>
+		</div>
+		<div class="flex justify-center bg-light section-title_container">
+			<h2 class="title dark">Projetos Recentes</h2>
+		</div>
+		<div class="flex-column full-w">
+			<div class="project-container full-w">
+				<div class="project_big img-container">
+					<img src="{% static 'img/HOME2.jpg' %}" alt="">
+				</div>
+				<div class="flex-column project_small">
+					<div class="full-w img-container">
+						<img src="{% static 'img/HOME2.jpg' %}" alt="">
+					</div>
+					<div class="flex-column start full-w project_description">
+						<span class="dark-label">Web Design</span>
+						<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+					</div>
+				</div>
+			</div>
+			<div class="project-container full-w">
+				<div class="project_big img-container">
+					<img src="{% static 'img/HOME2.jpg' %}" alt="">
+				</div>
+				<div class="flex-column project_small">
+					<div class="full-w img-container">
+						<img src="{% static 'img/HOME2.jpg' %}" alt="">
+					</div>
+					<div class="flex-column start full-w project_description">
+						<span class="dark-label">Web Design</span>
+						<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>

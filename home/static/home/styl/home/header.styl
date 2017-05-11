@@ -5,7 +5,15 @@
     overflow: hidden
     transition: height 300ms ease
     &.active
-        height: 200px
+        height: 294px
+
+    a
+        color: darkgraycolor
+        letter-spacing: 1px
+        text-decoration: none
+    
+        &:hover, &:focus, &:active
+            color: secondarycolor
 
 .header-content
     justify-content: space-between
@@ -25,9 +33,20 @@
 .header-nav_mobile-items
     width: 100%
     list-style: none
+    padding-left: 0
+    margin-top: 0
+    a
+        font-size: 14px
+        padding: 10px 0
+        letter-spacing: 0.6px
 
 .header-nav_items
     display: none
+    a
+        line-height: 100px
+        font-size: 13px
+        padding: 0 19px
+        text-transform: uppercase
 
 @media(min-width: 768px)
     .header

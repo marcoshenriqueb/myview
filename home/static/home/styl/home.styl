@@ -1,3 +1,11 @@
+darkcolor = rgb(17, 17, 17)
+darkgraycolor = #111111
+lightgraycolor = rgb(136, 136, 136)
+primarycolor = #59d7c5
+secondarycolor = #59d7c5
+filtercolor = rgba(43,73,103,0.4)
+lightbg = #f7f7f7
+
 *
     box-sizing: border-box
 
@@ -5,6 +13,10 @@ html, body
     margin: 0
     padding: 0
     width: 100%
+
+body
+    font-family: 'Raleway', sans-serif
+    color: darkcolor
 
 .flex
     display: flex
@@ -14,49 +26,124 @@ html, body
     display: flex
     flex-direction: column
     align-items: center
+    &.start
+        align-items: flex-start
 
 .min-full-size
     width: 100%
     height: 100%
 
+.justify-center
+    justify-content: center
+
 .full-w
     width: 100%
 
-@import './home/header'
+.full-h
+    height: 100%
 
-.top
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)), url('/static/img/cdj-m.jpg');
-    background-size: cover
-    position: relative
-    max-height: calc(100vh - 100px)
-    overflow: hidden
+.bg-light
+    background-color: lightbg
+
+.section-title_container
+    height: 252px
+
+.title
+    font-size: 32px
+    letter-spacing: 2px
+    text-transform: uppercase
+    &.big
+        font-size: 45px
+        letter-spacing: 5px
+
+.subtitle
+    font-size: 20px
+    color: darkcolor
+    letter-spacing: 1px
+    line-height: 20px
+    text-transform: uppercase
+
+.dark-label
+    color: darkcolor
+    font-size: 14px
+    text-transform: uppercase
+
+.light-text
+    color: lightgraycolor
+    font-weight: 300
+    font-size: 14px
+    line-height: 26px
+    
+.dark
+    color: darkcolor
+
+.white
     color: white
 
-.video-container
-    display: none
-
-@media(min-width:768px)
-    .top
-        background-image: none
-
-    .video-container
-        position: absolute
+.triangles
+    &:after, &:before
+        content: ''
         display: block
-        left: 0
+        position: absolute
+        left: 50%
+        transform: translate(-50%,0)
+        width: 0
+        border-left: 55px solid transparent
+        border-right: 55px solid transparent
+        z-index: 100
+        
+    &:after
+        bottom: 0
+        border-bottom: 18px solid #fff
+        border-top: 0
+        
+    &:before
         top: 0
+        border-top: 18px solid #fff
+        border-bottom: 0
+
+.overlay
+    background: linear-gradient(180deg, filtercolor, filtercolor)
+    height: 100%
+    width: 100%
+    position: absolute
+    top: 0
+    left: 0
+
+@import './home/header'
+@import './home/top'
+@import './home/description'
+@import './home/services'
+
+.img-container
+    overflow: hidden
+
+.project-container
+    display: flex
+    flex-direction: column
+    height: 500px
+    img
         width: 100%
-        z-index: -100
-        overflow: hidden
 
-        .filter
-            z-index: 100
-            position: absolute
-            background: rgba(0, 0, 0, 0.4)
-            width: 100%
-            height: 100%
+.project_big, .project_small
+    width: 100%
 
-        video
-            z-index: 0
-            width: 100%
-            height: 100%
-            min-height: 100%
+.project_description
+    padding: 3rem
+
+@media(min-width: 768px)
+    .project-container
+        flex-direction: row
+        
+        &:nth-child(2n)
+            >*:nth-child(2)
+                order: -1
+    
+    .project_big
+        width: 66%
+
+    .project_small
+        width: 34%
+        &>*
+            height: 50%            
+        

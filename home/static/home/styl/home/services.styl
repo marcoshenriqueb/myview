@@ -1,0 +1,27 @@
+.service-title
+    height: 490px
+    position: relative
+    background-image: url('/static/img/HOME2.jpg');
+
+    .title
+        z-index: 100
+
+.service-item_container
+    flex-wrap: wrap
+    padding: 5rem 0
+
+.service-item
+    text-align: center
+    padding: 2rem
+    width: 100%
+    &:hover, &:active, &:focus
+        i
+            color: secondarycolor
+
+    i
+        margin-bottom: 2rem
+        transition: color 400ms ease
+
+@media(min-width: 768px)
+    .service-item
+        width: 25%

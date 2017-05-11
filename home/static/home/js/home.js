@@ -1,5 +1,8 @@
 import 'normalize.css';
+import './../css/paraxify.css';
 import './../styl/home.styl';
+
+import './../js/paraxify';
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('mobile-menu').addEventListener('click', () => {
@@ -10,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const adjustVideo = () => {
         const w = window.innerWidth;
         if (w > 768) {
-            const vRatio = v.videoHeight / v.videoWidth;
+            const vRatio = (v.videoHeight - 20) / v.videoWidth;
             top.style.height = (vRatio * w) + 'px';
         } else {
             top.style.height = 'calc(100vh - 100px)';
@@ -21,5 +24,20 @@ document.addEventListener('DOMContentLoaded', () => {
     v.addEventListener('loadeddata', () => {
         adjustVideo();
     });
-    window.onresize = adjustVideo;
+
+    paraxify('.paraxify');
+
+    const adjustProjectContainers = () => {
+        const containers = document.querySelectorAll('.project-container');
+        containers.forEach((c) => {
+            c.style.height = (c.querySelector('.project_big img').clientHeight - 2) + 'px';
+        });
+    };
+    adjustProjectContainers();
+
+    const onResize = () => {
+        adjustProjectContainers();
+        adjustVideo();
+    };
+    window.onresize = onResize;
 });

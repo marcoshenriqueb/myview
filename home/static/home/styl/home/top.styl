@@ -1,0 +1,40 @@
+.top
+    background-image: linear-gradient(180deg, filtercolor, filtercolor), url('/static/img/top.jpg');
+    background-size: cover
+    position: relative
+    max-height: calc(100vh - 100px)
+    overflow: hidden
+    color: white
+    
+    .title
+        color: white
+
+.video-container
+    display: none
+
+@media(min-width:768px)
+    .top
+        background-image: none
+        
+
+    .video-container
+        position: absolute
+        display: block
+        left: 0
+        top: 0
+        width: 100%
+        z-index: -100
+        overflow: hidden
+
+        .filter
+            z-index: 100
+            position: absolute
+            background: filtercolor
+            width: 100%
+            height: 100%
+
+        video
+            z-index: 0
+            width: 100%
+            height: 100%
+            min-height: 100%
