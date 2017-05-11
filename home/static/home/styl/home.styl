@@ -110,6 +110,21 @@ body
     top: 0
     left: 0
 
+.o-button
+    color: secondarycolor
+    background-color rgba(0, 0, 0, .0)
+    border: 2px solid secondarycolor
+    text-decoration: none
+    font-size: 12px
+    line-height: 13px
+    letter-spacing: 1px
+    padding 10.5px 19.6px
+    transition 600ms all ease-out
+
+    &:hover, &:active, &:focus
+        background-color: secondarycolor
+        color: white
+
 @import './home/header'
 @import './home/top'
 @import './home/description'
@@ -122,13 +137,50 @@ body
     display: flex
     flex-direction: column
     img
+        display block
         width: 100%
+    
+    &:hover, &:active, &:focus
+        .project_small-overlay
+            transform scale(1, 1)
+            background-color rgba(0, 0, 0, .8)
+            .o-button:first-child, .o-button:last-child
+                transform translateX(0)
 
 .project_big, .project_small
     width: 100%
 
 .project_description
     padding: 3rem
+
+.project_small
+    .img-container
+        position relative
+
+.project_small-overlay
+    transform scale(0, 0)
+    position absolute
+    overflow hidden
+    width 100%
+    height 100%
+    top: 0
+    left 0
+    z-index 100
+    background-color rgba(0, 0, 0, .0)
+    transition 600ms all ease
+    .o-button
+        margin-right: 5px
+        
+    .o-button:first-child, .o-button:last-child
+        transition 600ms all ease-out
+    
+    .o-button:first-child
+        transform translateX(-100%)
+        
+    .o-button:last-child
+        margin-right: 0
+        transform translateX(100%)
+        
 
 @media(min-width: 868px)
     .project-container
@@ -144,5 +196,4 @@ body
     .project_small
         width: 34%
         &>*
-            height: 50%            
-        
+            height: 50%
