@@ -15,12 +15,9 @@ module.exports = function(env) {
       new webpack.DefinePlugin({
         'process.env': require('./../env').prod
       }),
+      new ExtractTextPlugin('css/[name].css'),
       new BabiliPlugin({
         sourceMap: true
-      }),
-      // extract css into its own file
-      new ExtractTextPlugin({
-        filename: resolve('/home/static/home/css/[name].css')
       }),
       // Compress extracted CSS. We are using this plugin so that possible
       // duplicated CSS from different components can be deduped.
@@ -35,6 +32,7 @@ module.exports = function(env) {
       new webpack.DefinePlugin({
         'process.env': require('./../env').dev
       }),
+      new ExtractTextPlugin('css/[name].css'),
       new webpack.NoEmitOnErrorsPlugin(),
       // https://github.com/ampedandwired/html-webpack-plugin
       new FriendlyErrorsPlugin()
@@ -59,28 +57,24 @@ module.exports = function(env) {
           include: [resolve('src')]
         },
         {
-          test: /\.css$/,
-          use: [
-            'style-loader',
-            'css-loader'
-          ]
-        },
-        {
-          test: /\.styl$/,
-          use: [
-            'style-loader',
-            'css-loader',
-            {
-              loader: 'postcss-loader',
-              options: {
-                sourceMap: true,
-                plugins: () => [ 
-                  require('autoprefixer') 
-                ]
-              }
-            },
-            'stylus-loader'
-          ]
+          test: /\.(css|styl)$/,
+          use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            //resolve-url-loader may be chained before sass-loader if necessary
+            use: [
+              'css-loader',
+              {
+                loader: 'postcss-loader',
+                options: {
+                  sourceMap: true,
+                  plugins: () => [ 
+                    require('autoprefixer') 
+                  ]
+                }
+              },
+              'stylus-loader'
+            ]
+          })
         }
       ]
     },
