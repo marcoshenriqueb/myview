@@ -1,6 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
-var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
+var BabiliPlugin = require("babili-webpack-plugin");
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -12,11 +15,19 @@ module.exports = function(env) {
       new webpack.DefinePlugin({
         'process.env': require('./../env').prod
       }),
-      new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false
-        },
+      new BabiliPlugin({
         sourceMap: true
+      }),
+      // extract css into its own file
+      new ExtractTextPlugin({
+        filename: resolve('/home/static/home/css/[name].css')
+      }),
+      // Compress extracted CSS. We are using this plugin so that possible
+      // duplicated CSS from different components can be deduped.
+      new OptimizeCSSPlugin({
+        cssProcessorOptions: {
+          safe: true
+        }
       })
     ];
   } else {
@@ -45,7 +56,7 @@ module.exports = function(env) {
         {
           test: /\.js$/,
           loader: 'babel-loader',
-          include: [resolve('src'), resolve('test')]
+          include: [resolve('src')]
         },
         {
           test: /\.css$/,
