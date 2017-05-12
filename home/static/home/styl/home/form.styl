@@ -1,0 +1,68 @@
+formcolor = rgb(238, 238, 238)
+
+input, textarea
+    border 1px solid formcolor
+    color lightgraycolor
+    font-size 14px
+    font-weight 300
+    line-height 26px
+    outline lightgraycolor
+    padding 9px
+    text-align start
+    text-indent 18px
+    transition 300ms all linear
+    margin-bottom 1rem
+    letter-spacing 1px
+    font-family: 'Raleway', sans-serif
+    &:focus
+        border-color secondarycolor
+
+input
+    height 46px
+    
+.button, .icon-button
+    color white
+    letter-spacing 1px
+    font-size 13px
+    text-decoration none
+    cursor pointer
+    text-transform uppercase
+    transition 600ms all ease-out
+
+.button
+    padding 15px 28px
+    border-radius 30px
+    background-color secondarycolor
+    border 1px solid secondarycolor
+    &:hover, &:active, &:focus
+        background-color: darkcolor
+        border-color darkcolor
+
+.icon-button
+    border-radius 25px
+    height 50px
+    width 50px
+    display flex
+    align-items center
+    justify-content center
+    font-size 15px
+    background-color darkcolor
+    border 1px solid darkcolor
+    &:hover, &:active, &:focus
+        background-color: secondarycolor
+        border-color secondarycolor
+
+.o-button
+    color: secondarycolor
+    background-color rgba(0, 0, 0, .0)
+    border: 2px solid secondarycolor
+    text-decoration: none
+    font-size: 12px
+    line-height: 13px
+    letter-spacing: 1px
+    padding 10.5px 19.6px
+    transition 600ms all ease-out
+
+    &:hover, &:active, &:focus
+        background-color: secondarycolor
+        color: white

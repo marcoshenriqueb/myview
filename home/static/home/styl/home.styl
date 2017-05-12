@@ -21,6 +21,8 @@ body
 .flex
     display: flex
     align-items: center
+    &.start
+        align-items: flex-start
 
 .flex-column
     display: flex
@@ -76,7 +78,11 @@ body
     font-weight: 300
     font-size: 14px
     line-height: 26px
-    
+
+.detail-text
+    font-size 14px
+    margin-bottom 5px
+
 .testimonial
     color: lightgraycolor
     font-size: 18px
@@ -121,21 +127,6 @@ body
     top: 0
     left: 0
 
-.o-button
-    color: secondarycolor
-    background-color rgba(0, 0, 0, .0)
-    border: 2px solid secondarycolor
-    text-decoration: none
-    font-size: 12px
-    line-height: 13px
-    letter-spacing: 1px
-    padding 10.5px 19.6px
-    transition 600ms all ease-out
-
-    &:hover, &:active, &:focus
-        background-color: secondarycolor
-        color: white
-
 @media(min-width:768px)
     .title
         font-size: 32px
@@ -143,21 +134,43 @@ body
             font-size: 45px
 
 
+@import './home/form'
 @import './home/header'
 @import './home/top'
 @import './home/description'
 @import './home/services'
 @import './home/project'
+@import './home/clients'
 
-.client
-    width 100%
+.contact-container
+    background-color: lightbg 
+    flex-wrap: wrap
+    padding 4rem 0
+    
+.contact-info, .contact-form
+    width: 100%
+    padding: 2rem
 
-.client-img
-    border-radius 50%
+.contact-form
+    input, textarea
+        width 100%
+
+.half-form_container
+    justify-content space-between
+    flex-wrap wrap
     
-.client-name
-    margin-bottom .4rem
-    
+.contact-info_icons
+    .icon-button
+        margin-right 10px  
+
 @media(min-width:768px)
-    .client
-        width 50%
+
+    .contact-info
+        width: 40%
+
+    .contact-form
+        width: 60%
+        input, textarea
+            &.half-form
+                width 48%
+                        

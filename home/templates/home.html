@@ -42,7 +42,7 @@
 		<div class="top triangles text-center">
 			<div class="video-container">
 				<div class="filter"></div>
-				<video autoplay loop controls="true" class="full-w" muted>
+				<video autoplay loop class="full-w" muted>
 					<source src="{% static 'videos/myview.mp4' %}" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
 					<source src="{% static 'videos/myview.webm' %}" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
 				</video>
@@ -165,6 +165,32 @@
 					<span class="light-text">Área ou setor</span>
 					<p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore eum accusamus delectus libero quo eaque soluta aliquam pariatur nihil quisquam ex ab, ratione alias, neque facere! Numquam labore rerum facilis?</p>
 				</div>
+			</div>
+			<br><br><br><br>
+		</div>
+		<div class="contact-container flex start full-w">
+			<div class="contact-info flex-column start">
+				<h2 class="title dark text-center" style="margin-top:0;">Contato</h2>
+				<span class="light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nobis aspernatur accusamus cum repellendus inventore cupiditate adipisci dolor, fugiat nemo necessitatibus ducimus! Fugit dolorem atque nemo quisquam veritatis modi excepturi?</span>
+				<br>
+				<span class="dark detail-text">Av das Américas 8888, Rio de Janeiro, Brasil</span>
+				<span class="dark detail-text">(102) 3456 789 / info@thememove.com</span>
+				<br>
+				<div class="flex contact-info_icons">
+					<i class="icon-button fa fa-facebook"></i>
+					<i class="icon-button fa fa-instagram"></i>
+					<i class="icon-button fa fa-vimeo"></i>
+					<i class="icon-button fa fa-youtube-play"></i>
+				</div>
+			</div>
+			<div class="contact-form">
+				<div class="flex half-form_container">
+					<input type="text" placeholder="Nome" name="name" class="half-form">
+					<input type="text" placeholder="Telefone" name="phone" class="half-form">
+				</div>
+				<input type="text" placeholder="email" name="Email">
+				<textarea name="message" placeholder="Mensagem" id="" cols="30" rows="5"></textarea>
+				<button class="button">Enviar</button>
 			</div>
 		</div>
 	</body>
