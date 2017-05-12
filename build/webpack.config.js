@@ -70,7 +70,16 @@ module.exports = function(env) {
           use: [
             'style-loader',
             'css-loader',
-            'stylus-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true,
+                plugins: () => [ 
+                  require('autoprefixer') 
+                ]
+              }
+            },
+            'stylus-loader'
           ]
         }
       ]
