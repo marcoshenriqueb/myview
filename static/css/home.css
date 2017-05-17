@@ -386,6 +386,23 @@ h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
+a {
+  font-family: 'Montserrat', sans-serif;
+  color: #111;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+a:hover,
+a:focus,
+a:active {
+  color: #59d7c5;
+}
+a.big {
+  font-size: 16px;
+}
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -461,6 +478,9 @@ h6 {
   color: #111;
   font-size: 14px;
   text-transform: uppercase;
+}
+.dark-label.big {
+  font-size: 16px;
 }
 .light-text {
   color: #888;
@@ -985,12 +1005,31 @@ input {
   margin: 0 5px;
 }
 .projects-content_item {
+  position: relative;
   margin-bottom: 20px;
   overflow: hidden;
 }
 .projects-content_item img {
   width: auto;
   height: 100%;
+}
+.projects-content_item_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0);
+  z-index: 100;
+  -webkit-transform: scale(0, 0);
+          transform: scale(0, 0);
+  -webkit-transition: all 400ms ease;
+  transition: all 400ms ease;
+}
+.projects-content_item:hover .projects-content_item_overlay {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+  background-color: rgba(255,255,255,0.75);
 }
 @media (min-width: 768px) {
   .projects-title {
