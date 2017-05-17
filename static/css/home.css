@@ -554,6 +554,7 @@ input {
 }
 .button,
 .icon-button,
+.o-button-reverse,
 .o-button {
   font-family: 'Montserrat', sans-serif;
   color: #fff;
@@ -578,14 +579,28 @@ input {
   border-color: #111;
 }
 .o-button {
+  font-family: 'Raleway', sans-serif;
+  text-transform: capitalize;
+  padding: 0 15px;
+  line-height: 36px;
+  border-radius: 30px;
+  color: #111;
+  border: 2px solid transparent;
+}
+.o-button:hover,
+.o-button:active,
+.o-button:focus {
+  border-color: #111;
+}
+.o-button-reverse {
   padding: 15px 28px;
   border-radius: 30px;
   color: #fff;
   border: 2px solid #fff;
 }
-.o-button:hover,
-.o-button:active,
-.o-button:focus {
+.o-button-reverse:hover,
+.o-button-reverse:active,
+.o-button-reverse:focus {
   color: #59d7c5;
   border-color: #59d7c5;
 }
@@ -948,4 +963,35 @@ input {
 .footer {
   background-color: #111;
   padding: 2.5rem 0;
+}
+.projects-title {
+  height: 150px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem;
+}
+.projects-title .subtitle {
+  font-size: 18px;
+}
+.projects-content {
+  padding: 2rem 1rem;
+}
+.projects-content_cat {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.projects-content_cat .o-button {
+  margin: 0 5px;
+}
+@media (min-width: 768px) {
+  .projects-title {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 4rem;
+  }
+  .projects-content {
+    padding: 2rem 4rem;
+  }
 }

@@ -17,11 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
             top.style.height = (vRatio * w) + 'px';
         }
     }
+
     const top = document.querySelector('.top');
     const v = document.getElementsByTagName('video')[0];
-    v.addEventListener('loadeddata', () => {
-        adjustVideo();
-    });
+    if (v) {
+        v.addEventListener('loadeddata', () => {
+            adjustVideo();
+        });
+    }
 
     paraxify('.paraxify');
 
@@ -42,7 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const onResize = () => {
         adjustProjectContainers();
-        adjustVideo();
+        if (v) {
+            adjustVideo();
+        }
     };
     window.onresize = onResize;
 });

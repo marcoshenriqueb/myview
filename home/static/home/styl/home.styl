@@ -146,39 +146,28 @@ h1, h2, h3, h4, h5, h6
 @import './home/services'
 @import './home/project'
 @import './home/clients'
+@import './home/contact'
+@import './footer'
 
-.contact-container
-    background-color: lightbg 
-    flex-wrap: wrap
-    padding 4rem 0
-    
-.contact-info, .contact-form
-    width: 100%
-    padding: 2rem
+.projects-title
+    height 150px
+    justify-content center
+    padding 1rem
+    .subtitle
+        font-size 18px
 
-.contact-form
-    input, textarea
-        width 100%
+.projects-content
+    padding 2rem 1rem
 
-.half-form_container
-    justify-content space-between
+.projects-content_cat
     flex-wrap wrap
-    
-.contact-info_icons
-    .icon-button
-        margin-right 10px  
+    .o-button
+        margin 0 5px
 
-@media(min-width:768px)
-
-    .contact-info
-        width: 40%
-
-    .contact-form
-        width: 60%
-        input, textarea
-            &.half-form
-                width 48%
-
-.footer
-    background-color darkcolor
-    padding 2.5rem 0
+@media(min-width 768px)
+    .projects-title
+        justify-content flex-start
+        padding 4rem
+        
+    .projects-content
+        padding 2rem 4rem

@@ -20,7 +20,7 @@ input, textarea
 input
     height 46px
     
-.button, .icon-button, .o-button
+.button, .icon-button, .o-button-reverse, .o-button
     font-family: 'Montserrat', sans-serif
     color white
     letter-spacing 1px
@@ -40,6 +40,17 @@ input
         border-color darkcolor
 
 .o-button
+    font-family: 'Raleway', sans-serif
+    text-transform capitalize
+    padding 0 15px
+    line-height 36px
+    border-radius 30px
+    color darkcolor
+    border 2px solid transparent
+    &:hover, &:active, &:focus
+        border-color darkcolor
+
+.o-button-reverse
     padding 15px 28px
     border-radius 30px
     color white
