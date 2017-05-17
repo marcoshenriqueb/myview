@@ -1,0 +1,48 @@
+.projects-title
+    height 150px
+    justify-content center
+    padding 1rem
+    .subtitle
+        font-size 18px
+
+.projects-content
+    padding 2rem 1rem
+
+.projects-content_cat
+    flex-wrap wrap
+    .o-button
+        margin 0 5px
+
+.projects-content_item
+    position relative
+    margin-bottom 20px
+    overflow hidden
+    img
+        width auto
+        height 100%
+
+.projects-content_item_overlay
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background-color rgba(255, 255, 255, .0)
+    z-index 100
+    transform scale(0, 0)
+    transition all 400ms ease
+    
+.projects-content_item
+    &:hover, &:focus
+        .projects-content_item_overlay
+            transform scale(1, 1)
+            background-color rgba(255, 255, 255, .75)
+
+@media(min-width 768px)
+    .projects-title
+        justify-content flex-start
+        padding 4rem
+        
+    .projects-content
+        padding 2rem 4rem
+

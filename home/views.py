@@ -10,3 +10,7 @@ class HomePageView(TemplateView):
 
 class ProjectsPageView(TemplateView):
     template_name = "projects.html"
+
+class SingleProjectPageView(TemplateView):
+    template_name = "single_project.html"
+        

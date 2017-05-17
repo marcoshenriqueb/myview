@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from home.views import HomePageView, ProjectsPageView
+from home.views import HomePageView, ProjectsPageView, SingleProjectPageView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', HomePageView.as_view(), name='home'),
     url(r'^projetos/$', ProjectsPageView.as_view(), name='projects'),
+    url(r'^projetos/(?P<id>[0-9]+)/$', SingleProjectPageView.as_view(), name='project'),
 ]
