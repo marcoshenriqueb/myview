@@ -984,6 +984,14 @@ input {
 .projects-content_cat .o-button {
   margin: 0 5px;
 }
+.projects-content_item {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.projects-content_item img {
+  width: auto;
+  height: 100%;
+}
 @media (min-width: 768px) {
   .projects-title {
     -webkit-box-pack: start;
