@@ -1,4 +1,4 @@
-topfiltercolor = rgba(0, 0, 0, .4)
+topfiltercolor = rgba(0, 0, 0, .6)
 
 .top
     background-image: linear-gradient(180deg, filtercolor, filtercolor), url('/static/img/top.jpg');
@@ -8,9 +8,10 @@ topfiltercolor = rgba(0, 0, 0, .4)
     overflow: hidden
     color: white
     
-    .title, .subtitle
+    .title
+        text-transform capitalize
+    .subtitle, .title
         color: white
-    
     .title
         margin-bottom .5rem
 
