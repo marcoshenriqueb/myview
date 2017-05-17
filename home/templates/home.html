@@ -1,200 +1,161 @@
-<!DOCTYPE html>
-<html lang="en-US">
-	<head>
-		<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
-		
-		<!--[if lte IE 9]>
-				<![endif]-->
-		<title>My View</title>
-		<link href="https://fonts.googleapis.com/css?family=Raleway:300,400" rel="stylesheet">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		{% load static %}
-		<link rel="stylesheet" href='{% static "css/home.css" %}'>
-		<script type='text/javascript' src='{% static "home.js" %}'></script>
-	</head>		
-	<body>
-		<header class="header">
-			<div class="header-content flex">
-				<div class="header-logo">
-					<img src="{% static 'img/logo.png' %}" alt="">
-				</div>
-				<div class="header-nav">
-					<ul class="header-nav_items flex">
-						<a href="#"><li>Home</li></a>
-						<a href="#"><li>Projetos</li></a>
-						<a href="#"><li>Pilotos</li></a>
-						<a href="#"><li>Serviços</li></a>
-						<a href="#"><li>Cursos</li></a>		
-					</ul>
-					<span id="mobile-menu" class="fa fa-bars"></span>
-				</div>
-			</div>
-			<ul class="header-nav_mobile-items flex-column">
-				<a href="#"><li>Home</li></a>
-				<a href="#"><li>Projetos</li></a>
-				<a href="#"><li>Pilotos</li></a>
-				<a href="#"><li>Serviços</li></a>
-				<a href="#"><li>Cursos</li></a>
-			</ul>
-		</header>
-		<div class="top triangles text-center">
-			<div class="video-container">
-				<div class="filter"></div>
-				<video autoplay loop class="full-w" muted>
-					<source src="{% static 'videos/myview.mp4' %}" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-					<source src="{% static 'videos/myview.webm' %}" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
-				</video>
-			</div>
-			<div class="flex-column min-full-size justify-center">
-				<h1 class="title big">Soluções com Drones</h1>
-				<p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-				<a href="" class="o-button">Contato</a>
-			</div>
+{% extends "base.html" %}
+{% block title %}
+	MyView - Home
+{% endblock %}
+{% block content %}
+    {% load static %}	
+	<div class="top triangles text-center">
+		<div class="video-container">
+			<div class="filter"></div>
+			<video autoplay loop class="full-w" muted>
+				<source src="{% static 'videos/myview.mp4' %}" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+				<source src="{% static 'videos/myview.webm' %}" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+			</video>
 		</div>
-		<div class="flex justify-center section-title_container">
-			<h2 class="title dark text-center">Quem Somos</h2>
+		<div class="flex-column min-full-size justify-center">
+			<h1 class="title big">Soluções com Drones</h1>
+			<p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			<a href="" class="o-button">Contato</a>
 		</div>
-		<div class="flex-column justify-center description">
-			<div class="description-content">
-				<h4 class="subtitle">Uma breve introdução</h4>
-				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam debitis voluptatem porro ut quod hic dolorem ullam aliquam accusamus, beatae quam deleniti quidem minima exercitationem. Cum rerum id, accusamus ea! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim distinctio, sequi officia quibusdam a accusantium rerum quis vel ad fuga. Earum itaque deleniti doloribus veniam accusamus aliquid corrupti provident adipisci.</p>
-			</div>
+	</div>
+	<div class="flex justify-center section-title_container">
+		<h2 class="title dark text-center">Quem Somos</h2>
+	</div>
+	<div class="flex-column justify-center description">
+		<div class="description-content">
+			<h4 class="subtitle">Uma breve introdução</h4>
+			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam debitis voluptatem porro ut quod hic dolorem ullam aliquam accusamus, beatae quam deleniti quidem minima exercitationem. Cum rerum id, accusamus ea! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim distinctio, sequi officia quibusdam a accusantium rerum quis vel ad fuga. Earum itaque deleniti doloribus veniam accusamus aliquid corrupti provident adipisci.</p>
 		</div>
-		<div class="flex paraxify justify-center triangles service-title">
-			<div class="overlay"></div>
-			<h2 class="title white big text-center">Nossos Serviços</h2>
+	</div>
+	<div class="flex paraxify justify-center triangles service-title">
+		<div class="overlay"></div>
+		<h2 class="title white big text-center">Nossos Serviços</h2>
+	</div>
+	<div class="flex full-w service-item_container">
+		<div class="flex-column service-item">
+			<i class="fa fa-3x fa-envelope-open-o"></i>
+			<span class="dark-label">Web Design</span>
+			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
 		</div>
-		<div class="flex full-w service-item_container">
-			<div class="flex-column service-item">
-				<i class="fa fa-3x fa-envelope-open-o"></i>
-				<span class="dark-label">Web Design</span>
-				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-			</div>
-			<div class="flex-column service-item">
-				<i class="fa fa-3x fa-envelope-open-o"></i>
-				<span class="dark-label">Web Design</span>
-				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-			</div>
-			<div class="flex-column service-item">
-				<i class="fa fa-3x fa-envelope-open-o"></i>
-				<span class="dark-label">Web Design</span>
-				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-			</div>
-			<div class="flex-column service-item">
-				<i class="fa fa-3x fa-envelope-open-o"></i>
-				<span class="dark-label">Web Design</span>
-				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-			</div>
-			<div class="flex-column service-item">
-				<i class="fa fa-3x fa-envelope-open-o"></i>
-				<span class="dark-label">Web Design</span>
-				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-			</div>
-			<div class="flex-column service-item">
-				<i class="fa fa-3x fa-envelope-open-o"></i>
-				<span class="dark-label">Web Design</span>
-				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-			</div>
-			<div class="flex-column service-item">
-				<i class="fa fa-3x fa-envelope-open-o"></i>
-				<span class="dark-label">Web Design</span>
-				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-			</div>
-			<div class="flex-column service-item">
-				<i class="fa fa-3x fa-envelope-open-o"></i>
-				<span class="dark-label">Web Design</span>
-				<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-			</div>
+		<div class="flex-column service-item">
+			<i class="fa fa-3x fa-envelope-open-o"></i>
+			<span class="dark-label">Web Design</span>
+			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
 		</div>
-		<div class="flex justify-center bg-light section-title_container">
-			<h2 class="title dark text-center">Projetos Recentes</h2>
+		<div class="flex-column service-item">
+			<i class="fa fa-3x fa-envelope-open-o"></i>
+			<span class="dark-label">Web Design</span>
+			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
 		</div>
-		<div class="flex-column full-w">
-			<div class="project-container full-w">
-				<div class="project_big img-container">
+		<div class="flex-column service-item">
+			<i class="fa fa-3x fa-envelope-open-o"></i>
+			<span class="dark-label">Web Design</span>
+			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+		</div>
+		<div class="flex-column service-item">
+			<i class="fa fa-3x fa-envelope-open-o"></i>
+			<span class="dark-label">Web Design</span>
+			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+		</div>
+		<div class="flex-column service-item">
+			<i class="fa fa-3x fa-envelope-open-o"></i>
+			<span class="dark-label">Web Design</span>
+			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+		</div>
+		<div class="flex-column service-item">
+			<i class="fa fa-3x fa-envelope-open-o"></i>
+			<span class="dark-label">Web Design</span>
+			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+		</div>
+		<div class="flex-column service-item">
+			<i class="fa fa-3x fa-envelope-open-o"></i>
+			<span class="dark-label">Web Design</span>
+			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+		</div>
+	</div>
+	<div class="flex justify-center bg-light section-title_container">
+		<h2 class="title dark text-center">Projetos Recentes</h2>
+	</div>
+	<div class="flex-column full-w">
+		<div class="project-container full-w">
+			<div class="project_big img-container">
+				<img src="{% static 'img/HOME2.jpg' %}" alt="">
+			</div>
+			<div class="flex-column project_small">
+				<div class="full-w img-container">
+					<div class="project_small-overlay flex justify-center">
+						<div class="flex">
+							<a href="" class="button-square">Ampliar</a>
+							<a href="" class="button-square">Info</a>
+							<a href="" class="button-square">Lançar</a>
+						</div>
+					</div>
 					<img src="{% static 'img/HOME2.jpg' %}" alt="">
 				</div>
-				<div class="flex-column project_small">
-					<div class="full-w img-container">
-						<div class="project_small-overlay flex justify-center">
-							<div class="flex">
-								<a href="" class="o-button">Ampliar</a>
-								<a href="" class="o-button">Info</a>
-								<a href="" class="o-button">Lançar</a>
-							</div>
-						</div>
-						<img src="{% static 'img/HOME2.jpg' %}" alt="">
-					</div>
-					<div class="flex-column start full-w project_description">
-						<span class="dark-label">Web Design</span>
-						<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-					</div>
+				<div class="flex-column start full-w project_description">
+					<span class="dark-label">Web Design</span>
+					<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
 				</div>
 			</div>
-			<div class="project-container full-w">
-				<div class="project_big img-container">
+		</div>
+		<div class="project-container full-w">
+			<div class="project_big img-container">
+				<img src="{% static 'img/HOME2.jpg' %}" alt="">
+			</div>
+			<div class="flex-column project_small">
+				<div class="full-w img-container">
+					<div class="project_small-overlay flex justify-center">
+						<div class="flex">
+							<a href="" class="button-square">Ampliar</a>
+							<a href="" class="button-square">Info</a>
+							<a href="" class="button-square">Lançar</a>
+						</div>
+					</div>
 					<img src="{% static 'img/HOME2.jpg' %}" alt="">
 				</div>
-				<div class="flex-column project_small">
-					<div class="full-w img-container">
-						<div class="project_small-overlay flex justify-center">
-							<div class="flex">
-								<a href="" class="o-button">Ampliar</a>
-								<a href="" class="o-button">Info</a>
-								<a href="" class="o-button">Lançar</a>
-							</div>
-						</div>
-						<img src="{% static 'img/HOME2.jpg' %}" alt="">
-					</div>
-					<div class="flex-column start full-w project_description">
-						<span class="dark-label">Web Design</span>
-						<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-					</div>
+				<div class="flex-column start full-w project_description">
+					<span class="dark-label">Web Design</span>
+					<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
 				</div>
 			</div>
 		</div>
-		<div class="flex-column">
-			<br><br><br><br>
-			<h2 class="title dark text-center">Nossos Clientes</h2>
-			<div class="clients-container flex justify-center">
-				<div class="flex-column client text-center">
-					<img class="client-img" src="{% static 'img/avatar.jpg' %}" alt="">
-					<p class="dark-label client-name">Nome do Cliente</p>
-					<span class="light-text">Área ou setor</span>
-					<p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore eum accusamus delectus libero quo eaque soluta aliquam pariatur nihil quisquam ex ab, ratione alias, neque facere! Numquam labore rerum facilis?</p>
-				</div>
-			</div>
-			<br><br><br><br>
-		</div>
-		<div class="contact-container flex start full-w">
-			<div class="contact-info flex-column start">
-				<h2 class="title dark text-center" style="margin-top:0;">Contato</h2>
-				<span class="light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nobis aspernatur accusamus cum repellendus inventore cupiditate adipisci dolor, fugiat nemo necessitatibus ducimus! Fugit dolorem atque nemo quisquam veritatis modi excepturi?</span>
-				<br>
-				<span class="dark detail-text">Av das Américas 8888, Rio de Janeiro, Brasil</span>
-				<span class="dark detail-text">(102) 3456 789 / info@thememove.com</span>
-				<br>
-				<div class="flex contact-info_icons">
-					<i class="icon-button fa fa-facebook"></i>
-					<i class="icon-button fa fa-instagram"></i>
-					<i class="icon-button fa fa-vimeo"></i>
-					<i class="icon-button fa fa-youtube-play"></i>
-				</div>
-			</div>
-			<div class="contact-form">
-				<div class="flex half-form_container">
-					<input type="text" placeholder="Nome" name="name" class="half-form">
-					<input type="text" placeholder="Telefone" name="phone" class="half-form">
-				</div>
-				<input type="text" placeholder="email" name="Email">
-				<textarea name="message" placeholder="Mensagem" id="" cols="30" rows="5"></textarea>
-				<button class="button">Enviar</button>
+	</div>
+	<div class="flex-column">
+		<br><br><br><br>
+		<h2 class="title dark text-center">Nossos Clientes</h2>
+		<div class="clients-container flex justify-center">
+			<div class="flex-column client text-center">
+				<img class="client-img" src="{% static 'img/avatar.jpg' %}" alt="">
+				<p class="dark-label client-name">Nome do Cliente</p>
+				<span class="light-text">Área ou setor</span>
+				<p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore eum accusamus delectus libero quo eaque soluta aliquam pariatur nihil quisquam ex ab, ratione alias, neque facere! Numquam labore rerum facilis?</p>
 			</div>
 		</div>
-		<footer class="footer flex justify-center white">
-			<span class="detail-text">Copyright © 2017 MyView</span>
-		</footer>
-	</body>
-</html>
+		<br><br><br><br>
+	</div>
+	<div class="contact-container flex start full-w">
+		<div class="contact-info flex-column start">
+			<h2 class="title dark text-center" style="margin-top:0;">Contato</h2>
+			<span class="light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nobis aspernatur accusamus cum repellendus inventore cupiditate adipisci dolor, fugiat nemo necessitatibus ducimus! Fugit dolorem atque nemo quisquam veritatis modi excepturi?</span>
+			<br>
+			<span class="dark detail-text">Av das Américas 8888, Rio de Janeiro, Brasil</span>
+			<span class="dark detail-text">(102) 3456 789 / info@thememove.com</span>
+			<br>
+			<div class="flex contact-info_icons">
+				<i class="icon-button fa fa-facebook"></i>
+				<i class="icon-button fa fa-instagram"></i>
+				<i class="icon-button fa fa-vimeo"></i>
+				<i class="icon-button fa fa-youtube-play"></i>
+			</div>
+		</div>
+		<div class="contact-form">
+			<div class="flex half-form_container">
+				<input type="text" placeholder="Nome" name="name" class="half-form">
+				<input type="text" placeholder="Telefone" name="phone" class="half-form">
+			</div>
+			<input type="text" placeholder="email" name="Email">
+			<textarea name="message" placeholder="Mensagem" id="" cols="30" rows="5"></textarea>
+			<button class="button">Enviar</button>
+		</div>
+	</div>
+{% endblock %}

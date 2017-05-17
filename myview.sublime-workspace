@@ -4,20 +4,44 @@
 		"selected_items":
 		[
 			[
-				"trans",
-				"transition\tstyl"
-			],
-			[
 				"margin",
 				"margin-right\tstyl"
+			],
+			[
+				"border",
+				"border-radius\tstyl"
+			],
+			[
+				"text",
+				"text-transform\tstyl"
 			],
 			[
 				"font",
 				"font-size\tstyl"
 			],
 			[
-				"text",
-				"text-decoration\tstyl"
+				"p",
+				"placeholder\tAttr"
+			],
+			[
+				"tra",
+				"transition\tstyl"
+			],
+			[
+				"fu",
+				"full-w"
+			],
+			[
+				"source",
+				"sourceMap"
+			],
+			[
+				"border-r",
+				"border-radius\tstyl"
+			],
+			[
+				"trans",
+				"transition\tstyl"
 			],
 			[
 				"tras",
@@ -107,6 +131,33 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "home/static/home/js/home.js",
+			"settings":
+			{
+				"buffer_size": 1460,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "home/static/home/styl/home.styl",
+			"settings":
+			{
+				"buffer_size": 3045,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "home/templates/home.html",
+			"settings":
+			{
+				"buffer_size": 9160,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -115,12 +166,12 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "git com",
+		"height": 292.0,
+		"last_filter": "gitcomm",
 		"selected_items":
 		[
 			[
-				"git com",
+				"gitcomm",
 				"Git: Commit"
 			],
 			[
@@ -128,7 +179,23 @@
 				"Git: Add..."
 			],
 			[
-				"gitcomm",
+				"gitadd",
+				"Git: Add..."
+			],
+			[
+				"gitcom",
+				"Git: Commit"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"gid ad",
+				"Git: Add..."
+			],
+			[
+				"git com",
 				"Git: Commit"
 			],
 			[
@@ -144,16 +211,8 @@
 				"Git: Push Current Branch"
 			],
 			[
-				"gitcom",
-				"Git: Commit"
-			],
-			[
 				"gitpus",
 				"Git: Push Current Branch"
-			],
-			[
-				"gitadd",
-				"Git: Add..."
 			],
 			[
 				"gitpu",
@@ -204,10 +263,6 @@
 				"Package Control: Install Package"
 			],
 			[
-				"git comm",
-				"Git: Commit"
-			],
-			[
 				"git sta",
 				"Git: Status"
 			],
@@ -236,7 +291,7 @@
 				"Install Package Control"
 			]
 		],
-		"width": 467.0
+		"width": 485.0
 	},
 	"console":
 	{
@@ -257,19 +312,31 @@
 	"expanded_folders":
 	[
 		"/var/www/python/myview",
+		"/var/www/python/myview/home",
 		"/var/www/python/myview/home/static",
 		"/var/www/python/myview/home/static/home",
 		"/var/www/python/myview/home/static/home/css",
 		"/var/www/python/myview/home/static/home/js",
-		"/var/www/python/myview/home/static/home/styl",
-		"/var/www/python/myview/home/static/home/styl/home",
-		"/var/www/python/myview/home/templates"
+		"/var/www/python/myview/home/static/home/styl"
 	],
 	"file_history":
 	[
-		"/var/www/python/myview/home/static/home/js/home.js",
-		"/var/www/python/myview/home/static/home/styl/home/top.styl",
+		"/var/www/python/myview/home/static/home/styl/home/form.styl",
+		"/var/www/python/myview/home/static/home/styl/home/clients.styl",
+		"/home/marcoshenriqueb/.config/sublime-text-3/Packages/Stylus/Stylus.sublime-settings",
+		"/var/www/python/juxer-vuex/juxer/front/templates/front/home.html",
+		"/var/www/python/myview/build/webpack.config.js",
+		"/var/www/html/kundan-v4-prototype/build/utils.js",
+		"/var/www/html/kundan-v4-prototype/build/webpack.prod.conf.js",
+		"/var/www/html/kundan-v4-prototype/build/webpack.base.conf.js",
+		"/var/www/python/myview/home/static/home/styl/home/project.styl",
 		"/var/www/python/myview/home/static/home/styl/home.styl",
+		"/var/www/python/myview/home/static/home/styl/home/top.styl",
+		"/var/www/python/myview/myview/settings.py",
+		"/var/www/python/poolers/poolers-backend/poolers/settings.py",
+		"/var/www/python/myview/home/static/home/js/home.js",
+		"/var/www/python/myview/package.json",
+		"/var/www/python/myview/.babelrc",
 		"/var/www/python/myview/home/templates/home.html",
 		"/var/www/python/myview/home/templates/home.1.html",
 		"/var/www/python/myview/myview.sublime-project",
@@ -279,7 +346,6 @@
 		"/var/www/html/kundan-js-plugin/src/helpers/modal.js",
 		"/var/www/html/kundan-js-plugin/src/classes.js",
 		"/var/www/html/kundan-js-plugin/src/styl/app.styl",
-		"/var/www/python/myview/build/webpack.config.js",
 		"/var/www/html/kundan-js-plugin/build/webpack.config.js",
 		"/var/www/html/kundan-js-plugin/.gitignore",
 		"/var/www/html/kundan-js-plugin/.sublime-project",
@@ -292,7 +358,6 @@
 		"/var/www/html/kundan-v4-prototype/package.json",
 		"/var/www/python/myview/home/static/home/styl/home/description.styl",
 		"/var/www/python/myview/home/static/home/styl/home/services.styl",
-		"/var/www/python/myview/package.json",
 		"/var/www/python/myview/home/static/home/styl/home/header.styl",
 		"/var/www/html/kundan-v4-backend/storage/logs/laravel.log",
 		"/var/www/html/kundan-v4-backend/resources/lang/en/email.php",
@@ -317,7 +382,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -331,6 +396,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"gray",
+			"wrap",
+			"},\n",
+			"webki",
+			".top",
+			"text",
+			"label",
 			"this.success",
 			"this.el",
 			"contain",
@@ -359,8 +431,101 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "home/static/home/js/home.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1460,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								24,
+								24
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "home/static/home/styl/home.styl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3045,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2453,
+								2453
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Stylus/Stylus.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1997.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "home/templates/home.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9160,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9072,
+								9072
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 570.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -417,12 +582,40 @@
 		"selected_items":
 		[
 			[
-				"builder",
-				"src/helpers/builder.js"
+				"home.st",
+				"home/static/home/styl/home.styl"
+			],
+			[
+				"home",
+				"home/templates/home.html"
+			],
+			[
+				"setting",
+				"myview/settings.py"
+			],
+			[
+				"home.sty",
+				"home/static/home/styl/home.styl"
+			],
+			[
+				"settin",
+				"myview/settings.py"
+			],
+			[
+				"top.st",
+				"home/static/home/styl/home/top.styl"
+			],
+			[
+				"sett",
+				"myview/settings.py"
 			],
 			[
 				"packa",
 				"package.json"
+			],
+			[
+				"builder",
+				"src/helpers/builder.js"
 			],
 			[
 				"laravel",

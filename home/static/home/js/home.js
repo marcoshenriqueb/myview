@@ -12,11 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const adjustVideo = () => {
         const w = window.innerWidth;
-        if (w > 768) {
+        if (w > 768 && top.offsetHeight > v.offsetHeight) {
             const vRatio = (v.videoHeight - 20) / v.videoWidth;
             top.style.height = (vRatio * w) + 'px';
-        } else {
-            top.style.height = 'calc(100vh - 100px)';
         }
     }
     const top = document.querySelector('.top');
