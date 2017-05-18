@@ -13,7 +13,6 @@ class ProjectCategory(models.Model):
 
     def __str__(self):
         return self.name
-
 class Project(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name="Usuário")
     name = models.CharField("Nome", max_length=255)
@@ -22,7 +21,7 @@ class Project(models.Model):
     customer = models.CharField("Cliente", max_length=255)
     date = models.DateTimeField("Data", auto_now=False, auto_now_add=False)
     order = models.PositiveSmallIntegerField("Ordem", null=True, blank=True)
-    category = models.ForeignKey(ProjectCategory, on_delete=models.CASCADE, verbose_name="Categoria")
+    category = models.ForeignKey(ProjectCategory, on_delete=models.CASCADE, verbose_name="Categoria", related_name="projects")
     vimeo = models.CharField("Embed vimeo", max_length=255, null=True, blank=True)
     home = models.BooleanField("Colocar na home", default=False)
     created_at = models.DateTimeField("Criado em", auto_now=False, auto_now_add=True)
@@ -31,6 +30,7 @@ class Project(models.Model):
     class Meta:
         verbose_name = 'Projeto'
         verbose_name_plural = 'Projetos'
+        ordering = ['order',]
 
     def __str__(self):
         return self.name
@@ -39,13 +39,14 @@ class ProjectPhoto(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name="Usuário")
     photo = models.ImageField("Foto", upload_to='projectphotos/%Y/%m/%d/', max_length=255)
     order = models.PositiveSmallIntegerField("Ordem", null=True, blank=True)
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="photos")
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, verbose_name="Projeto", related_name="photos")
     created_at = models.DateTimeField("Criado em", auto_now=False, auto_now_add=True)
     updated_at = models.DateTimeField("Atualizado em", auto_now=True, auto_now_add=False)
 
     class Meta:
         verbose_name = 'Foto'
         verbose_name_plural = 'Fotos'
+        ordering = ['order',]
 
     def __str__(self):
         return str(self.id)

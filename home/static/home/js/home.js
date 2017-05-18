@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('header.header').classList.toggle('active');
     });
 
-
+    // Adjusts cover video size
     const adjustVideo = () => {
         const w = window.innerWidth;
         if (w > 768 && top.offsetHeight > v.offsetHeight) {
@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
             top.style.height = (vRatio * w) + 'px';
         }
     }
-
     const top = document.querySelector('.top');
     const v = document.getElementsByTagName('video')[0];
     if (v) {
@@ -28,8 +27,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Parallax home page
     paraxify('.paraxify');
 
+    // Adjusts home page projects container size
     const adjustProjectContainers = () => {
         const w = window.innerWidth;
         const containers = document.querySelectorAll('.project-container');
@@ -45,7 +46,38 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     adjustProjectContainers();
 
+    // Vimeo lightbox
+    document.querySelectorAll('.start-video').forEach((d) => {
+        d.addEventListener('click', (e) => {
+            e.preventDefault();
+            const overlay = document.createElement('div');
+            overlay.id = 'body-overlay';
+            overlay.classList.add('body-overlay');
+            document.body.appendChild(overlay);
+            const close = document.createElement('span');
+            close.classList.add('fa');
+            close.classList.add('fa-close');
+            close.addEventListener('click', () => {
+                overlay.parentNode.removeChild(overlay);
+            });
+            overlay.addEventListener('click', (e) => {
+                if (e.target.id === 'body-overlay') {
+                    overlay.parentNode.removeChild(overlay);
+                }
+            });
+            overlay.appendChild(close);
+            const video = document.createElement('div');
+            video.classList.add('video-player');
+            overlay.appendChild(video);
+            const width = (overlay.offsetWidth * 0.8).toFixed(0);
+            const player = new Vimeo(video, {
+                id: e.target.dataset.id,
+                width
+            });
+        });
+    });
 
+    // Shuffle for projects page
     const grid = document.getElementById('grid');
     if (grid) {
         const shuffle = new Shuffle(grid, {
@@ -72,30 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         });
     }
-
-    document.querySelectorAll('.start-video').forEach((d) => {
-        d.addEventListener('click', (e) => {
-            e.preventDefault();
-            const overlay = document.createElement('div');
-            overlay.classList.add('body-overlay');
-            document.body.appendChild(overlay);
-            const close = document.createElement('span');
-            close.classList.add('fa');
-            close.classList.add('fa-close');
-            close.addEventListener('click', () => {
-                overlay.parentNode.removeChild(overlay);
-            });
-            overlay.appendChild(close);
-            const video = document.createElement('div');
-            video.classList.add('video-player');
-            overlay.appendChild(video);
-            const width = (overlay.offsetWidth * 0.8).toFixed(0);
-            const player = new Vimeo(video, {
-                id: e.target.dataset.id,
-                width
-            });
-        });
-    });
 
     const onResize = () => {
         adjustProjectContainers();

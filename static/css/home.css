@@ -1049,6 +1049,8 @@ input {
 }
 .projects-content_item_overlay {
   position: absolute;
+  padding: 1.5rem;
+  text-align: center;
   top: 0;
   left: 0;
   width: 100%;

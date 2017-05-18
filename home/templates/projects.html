@@ -4,44 +4,30 @@
 {% endblock %}
 {% block content %}
     {% load static %}   
+    {% get_media_prefix as media_prefix %}
     <div class="flex bg-light projects-title">
         <h2 class="subtitle dark text-center">Portfólio</h2>
     </div>
     <div class="flex-column projects-content">
         <div class="flex full-w projects-content_cat">
             <span id="all" class="o-button project-filter-button">Todos</span>
-            <span id="inspecao" class="o-button project-filter-button">Inspeção</span>
-            <span id="monitoramento" class="o-button project-filter-button">Monitoramento</span>
+            {% for c in categories %}
+                <span id="{{ c.id }}" class="o-button project-filter-button">{{ c.name }}</span>
+            {% endfor %}
         </div>
         <br>
         <div id="grid" class="projects-content_items full-w">
-            <div class="projects-content_item" data-groups='["inspecao"]'>
-                <div class="projects-content_item_overlay flex-column justify-center">
-                    <i class="icon-button fa fa-search"></i>
-                    <br>
-                    <br>
-                    <a href="#" class="big">Featured Work</a>
+            {% for p in projects %}
+                <div class="projects-content_item" data-groups='["{{ p.category.id }}"]'>
+                    <div class="projects-content_item_overlay flex-column justify-center">
+                        <a href="{% url 'project' p.id %}"><i class="icon-button fa fa-search"></i></a>
+                        <br>
+                        <br>
+                        <a href="{% url 'project' p.id %}" class="big">{{ p.name|truncatechars:40 }}</a>
+                    </div>
+                    <img src="{{ media_prefix }}{{ p.photos.all.0.photo }}" width="160" alt="">
                 </div>
-                <img src="{% static 'img/HOME2.jpg' %}" width="160" alt="">
-            </div>
-            <div class="projects-content_item" data-groups='["inspecao"]'>
-                <div class="projects-content_item_overlay flex-column justify-center">
-                    <i class="icon-button fa fa-search"></i>
-                    <br>
-                    <br>
-                    <a href="#" class="big">Featured Work</a>
-                </div>
-                <img src="{% static 'img/HOME2.jpg' %}" width="160" alt="">
-            </div>
-            <div class="projects-content_item" data-groups='["monitoramento"]'>
-                <div class="projects-content_item_overlay flex-column justify-center">
-                    <i class="icon-button fa fa-search"></i>
-                    <br>
-                    <br>
-                    <a href="#" class="big">Featured Work</a>
-                </div>
-                <img src="{% static 'img/HOME2.jpg' %}" width="160" alt="">
-            </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
