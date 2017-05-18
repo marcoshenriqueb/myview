@@ -139,10 +139,28 @@ a
         border-bottom: 0
 
 .overlay
+    position: absolute
     background: linear-gradient(180deg, filtercolor, filtercolor)
     height: 100%
+
+.body-overlay
+    position fixed
+    height 100vh
+    background-color rgba(0, 0, 0, .9)
+    z-index 10000
+    display flex
+    align-items center
+    justify-content center
+    span
+        position absolute
+        top 0
+        right 0
+        color white
+        margin 2rem
+        cursor pointer
+
+.body-overlay, .overlay
     width: 100%
-    position: absolute
     top: 0
     left: 0
 
@@ -164,3 +182,4 @@ a
 @import './footer'
 @import './projects'
 @import './single-project'
+

@@ -34,7 +34,10 @@
     "webpack-hot-middleware": "^2.16.1"
   },
   "dependencies": {
+    "@vimeo/player": "^2.0.2",
+    "install": "^0.10.1",
     "normalize.css": "^7.0.0",
+    "npm": "^4.6.1",
     "shufflejs": "^4.2.0"
   }
 }

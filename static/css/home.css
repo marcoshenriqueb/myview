@@ -532,11 +532,37 @@ a.big {
   border-bottom: 0;
 }
 .overlay {
+  position: absolute;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(43,73,103,0.4)), to(rgba(43,73,103,0.4)));
   background: linear-gradient(180deg, rgba(43,73,103,0.4), rgba(43,73,103,0.4));
   height: 100%;
-  width: 100%;
+}
+.body-overlay {
+  position: fixed;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.9);
+  z-index: 10000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.body-overlay span {
   position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  margin: 2rem;
+  cursor: pointer;
+}
+.body-overlay,
+.overlay {
+  width: 100%;
   top: 0;
   left: 0;
 }
@@ -878,6 +904,7 @@ input {
 }
 .project_description {
   padding: 3rem;
+  overflow: hidden;
 }
 .project_small .img-container {
   position: relative;

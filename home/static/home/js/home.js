@@ -4,6 +4,7 @@ import './../styl/home.styl';
 
 import './../js/paraxify';
 import Shuffle from 'shufflejs';
+import Vimeo from '@vimeo/player';
 
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('mobile-menu').addEventListener('click', () => {
@@ -71,6 +72,30 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         });
     }
+
+    document.querySelectorAll('.start-video').forEach((d) => {
+        d.addEventListener('click', (e) => {
+            e.preventDefault();
+            const overlay = document.createElement('div');
+            overlay.classList.add('body-overlay');
+            document.body.appendChild(overlay);
+            const close = document.createElement('span');
+            close.classList.add('fa');
+            close.classList.add('fa-close');
+            close.addEventListener('click', () => {
+                overlay.parentNode.removeChild(overlay);
+            });
+            overlay.appendChild(close);
+            const video = document.createElement('div');
+            video.classList.add('video-player');
+            overlay.appendChild(video);
+            const width = (overlay.offsetWidth * 0.8).toFixed(0);
+            const player = new Vimeo(video, {
+                id: e.target.dataset.id,
+                width
+            });
+        });
+    });
 
     const onResize = () => {
         adjustProjectContainers();

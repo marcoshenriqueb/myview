@@ -3,7 +3,8 @@
 	MyView - Home
 {% endblock %}
 {% block content %}
-    {% load static %}	
+    {% load static %}
+    {% get_media_prefix as media_prefix %}
 	<div class="top triangles text-center">
 		<div class="video-container">
 			<div class="filter"></div>
@@ -77,48 +78,35 @@
 		<h2 class="title dark text-center">Projetos Recentes</h2>
 	</div>
 	<div class="flex-column full-w">
-		<div class="project-container full-w">
-			<div class="project_big img-container">
-				<img src="{% static 'img/HOME2.jpg' %}" alt="">
-			</div>
-			<div class="flex-column project_small">
-				<div class="full-w img-container">
-					<div class="project_small-overlay flex justify-center">
-						<div class="flex">
-							<a href="" class="button-square">Ampliar</a>
-							<a href="" class="button-square">Info</a>
-							<a href="" class="button-square">Lançar</a>
+		{% for p in projects %}
+			<div class="project-container full-w">
+				<div class="project_big img-container">
+					<img src="{{ media_prefix }}{{ p.photos.all.0.photo }}" alt="">
+				</div>
+				<div class="flex-column project_small">
+					<div class="full-w img-container">
+						<div class="project_small-overlay flex justify-center">
+							<div class="flex">
+								{% if p.vimeo %}
+									<a href="" data-id="{{ p.vimeo }}" class="button-square start-video">Ampliar</a>
+								{% endif %}
+								<a href="" class="button-square">Info</a>
+								<a href="{% url 'project' p.id %}" class="button-square">Abrir</a>
+							</div>
 						</div>
+						<img src="{{ media_prefix }}{{ p.photos.all.1.photo }}" alt="">
 					</div>
-					<img src="{% static 'img/HOME2.jpg' %}" alt="">
-				</div>
-				<div class="flex-column start full-w project_description">
-					<span class="dark-label">Web Design</span>
-					<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-				</div>
-			</div>
-		</div>
-		<div class="project-container full-w">
-			<div class="project_big img-container">
-				<img src="{% static 'img/HOME2.jpg' %}" alt="">
-			</div>
-			<div class="flex-column project_small">
-				<div class="full-w img-container">
-					<div class="project_small-overlay flex justify-center">
-						<div class="flex">
-							<a href="" class="button-square">Ampliar</a>
-							<a href="" class="button-square">Info</a>
-							<a href="" class="button-square">Lançar</a>
-						</div>
+					<div class="flex-column start full-w project_description">
+						<span class="dark-label">{{ p.name }}</span>
+						{% if p.short_description %}
+							<p class="light-text">{{ p.short_description }}</p>
+						{% else %}
+							<p class="light-text">{{ p.description|truncatechars:255 }}</p>
+						{% endif %}
 					</div>
-					<img src="{% static 'img/HOME2.jpg' %}" alt="">
-				</div>
-				<div class="flex-column start full-w project_description">
-					<span class="dark-label">Web Design</span>
-					<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
 				</div>
 			</div>
-		</div>
+		{% endfor %}
 	</div>
 	<div class="flex-column">
 		<br><br><br><br>

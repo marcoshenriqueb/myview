@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.conf.urls import url
 from django.contrib import admin
 from home.views import HomePageView, ProjectsPageView, SingleProjectPageView
@@ -22,4 +24,4 @@ urlpatterns = [
     url(r'^$', HomePageView.as_view(), name='home'),
     url(r'^projetos/$', ProjectsPageView.as_view(), name='projects'),
     url(r'^projetos/(?P<id>[0-9]+)/$', SingleProjectPageView.as_view(), name='project'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
