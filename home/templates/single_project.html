@@ -1,25 +1,23 @@
 {% extends "base.html" %}
 {% block title %}
-    MyView - Projeto
+    MyView - {{ project.name|truncatechars:10 }}
 {% endblock %}
 {% block content %}
     {% load static %}   
+    {% get_media_prefix as media_prefix %}
     <div class="flex bg-light single_project-title">
-        <h2 class="subtitle dark text-center">Nome do Projeto</h2>
+        <h2 class="subtitle dark text-center">{{ project.name }}</h2>
     </div>
     <div class="single_project-container full-w">
         <div class="flex-column single_project-photos">
-            <img src="{% static 'img/HOME2.jpg' %}" width="160" alt="">
-            <img src="{% static 'img/HOME2.jpg' %}" width="160" alt="">
-            <img src="{% static 'img/HOME2.jpg' %}" width="160" alt="">
-            <img src="{% static 'img/HOME2.jpg' %}" width="160" alt="">
-            <img src="{% static 'img/HOME2.jpg' %}" width="160" alt="">
-            <img src="{% static 'img/HOME2.jpg' %}" width="160" alt="">
+            {% for p in project.photos.all %}
+                <img src="{{ media_prefix }}{{ p.photo }}" width="160" alt="">
+            {% endfor %}
         </div>
         <div class="single_project-content">
-            <h2 class="subtitle dark text-center">Nome do Projeto</h2>
+            <h2 class="subtitle dark text-center">{{ project.name }}</h2>
             <span class="dark-label">Descrição</span>
-            <p class="light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias ipsum sapiente odio maxime molestiae, exercitationem eos. Fuga dignissimos a autem, accusamus! Quos, pariatur repudiandae necessitatibus ratione cumque illum possimus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, neque vel tenetur earum qui provident, voluptates eveniet modi illum eum illo magni dolorum explicabo error, expedita animi accusantium, nihil voluptas. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt accusamus obcaecati inventore omnis sequi dicta repudiandae magni officia facere. A dolore saepe id culpa officia consequuntur, nostrum quibusdam aspernatur, alias.</p>
+            <p class="light-text">{{ project.description }}</p>
         </div>
     </div>
     
