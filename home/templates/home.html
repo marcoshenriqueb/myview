@@ -16,7 +16,7 @@
 		<div class="flex-column min-full-size justify-center">
 			<h1 class="title big">Soluções com Drones</h1>
 			<p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-			<a href="" class="o-button-reverse">Contato</a>
+			<a href="#contact" class="o-button-reverse">Contato</a>
 		</div>
 	</div>
 	<div class="flex justify-center section-title_container">
@@ -74,40 +74,42 @@
 			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
 		</div>
 	</div>
-	<div class="flex justify-center bg-light section-title_container">
-		<h2 class="title dark text-center">Projetos Recentes</h2>
-	</div>
-	<div class="flex-column full-w">
-		{% for p in projects %}
-			<div class="project-container full-w">
-				<div class="project_big img-container">
-					<img src="{{ media_prefix }}{{ p.photos.all.0.photo }}" alt="">
-				</div>
-				<div class="flex-column project_small">
-					<div class="full-w img-container">
-						<div class="project_small-overlay flex justify-center">
-							<div class="flex">
-								{% if p.vimeo %}
-									<a href="" data-id="{{ p.vimeo }}" class="button-square start-video">Ampliar</a>
-								{% endif %}
-								<a href="" class="button-square">Info</a>
-								<a href="{% url 'project' p.id %}" class="button-square">Abrir</a>
+	{% if projects %}
+		<div class="flex justify-center bg-light section-title_container">
+			<h2 class="title dark text-center">Projetos Recentes</h2>
+		</div>
+		<div class="flex-column full-w">
+			{% for p in projects %}
+				<div class="project-container full-w">
+					<div class="project_big img-container">
+						<img src="{{ media_prefix }}{{ p.photos.all.0.photo }}" alt="">
+					</div>
+					<div class="flex-column project_small">
+						<div class="full-w img-container">
+							<div class="project_small-overlay flex justify-center">
+								<div class="flex">
+									{% if p.vimeo %}
+										<a href="" data-id="{{ p.vimeo }}" class="button-square start-video">Ampliar</a>
+									{% endif %}
+									<a href="" class="button-square">Info</a>
+									<a href="{% url 'project' p.id %}" class="button-square">Abrir</a>
+								</div>
 							</div>
+							<img src="{{ media_prefix }}{{ p.photos.all.1.photo }}" alt="">
 						</div>
-						<img src="{{ media_prefix }}{{ p.photos.all.1.photo }}" alt="">
-					</div>
-					<div class="flex-column start full-w project_description">
-						<span class="dark-label">{{ p.name }}</span>
-						{% if p.short_description %}
-							<p class="light-text">{{ p.short_description }}</p>
-						{% else %}
-							<p class="light-text">{{ p.description|truncatechars:255 }}</p>
-						{% endif %}
+						<div class="flex-column start full-w project_description">
+							<span class="dark-label">{{ p.name }}</span>
+							{% if p.short_description %}
+								<p class="light-text">{{ p.short_description }}</p>
+							{% else %}
+								<p class="light-text">{{ p.description|truncatechars:255 }}</p>
+							{% endif %}
+						</div>
 					</div>
 				</div>
-			</div>
-		{% endfor %}
-	</div>
+			{% endfor %}
+		</div>
+	{% endif %}
 	<div class="flex-column">
 		<br><br><br><br>
 		<h2 class="title dark text-center">Nossos Clientes</h2>
@@ -121,7 +123,7 @@
 		</div>
 		<br><br><br><br>
 	</div>
-	<div class="contact-container flex start full-w">
+	<div id="contact" class="contact-container flex start full-w">
 		<div class="contact-info flex-column start">
 			<h2 class="title dark text-center" style="margin-top:0;">Contato</h2>
 			<span class="light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nobis aspernatur accusamus cum repellendus inventore cupiditate adipisci dolor, fugiat nemo necessitatibus ducimus! Fugit dolorem atque nemo quisquam veritatis modi excepturi?</span>
@@ -130,10 +132,10 @@
 			<span class="dark detail-text">(102) 3456 789 / info@thememove.com</span>
 			<br>
 			<div class="flex contact-info_icons">
-				<i class="icon-button fa fa-facebook"></i>
-				<i class="icon-button fa fa-instagram"></i>
-				<i class="icon-button fa fa-vimeo"></i>
-				<i class="icon-button fa fa-youtube-play"></i>
+				<a target="_blank" href="https://www.facebook.com/myviewdrones/"><i class="icon-button fa fa-facebook"></i></a>
+				<a target="_blank" href="https://www.instagram.com/myviewbr/"><i class="icon-button fa fa-instagram"></i></a>
+				<a target="_blank" href="https://vimeo.com/user51265724"><i class="icon-button fa fa-vimeo"></i></a>
+				<a target="_blank" href="https://www.youtube.com/channel/UC1JyE1jSGskez0KXZax8wLg"><i class="icon-button fa fa-youtube-play"></i></a>
 			</div>
 		</div>
 		<div class="contact-form">

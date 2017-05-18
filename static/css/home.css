@@ -836,7 +836,7 @@ input {
 .service-title {
   height: 490px;
   position: relative;
-  background-image: url("/static/img/HOME2.jpg");
+  background-image: url("/static/img/drone.jpg");
 }
 .service-title .title {
   z-index: 100;
