@@ -1,5 +1,6 @@
 from django.views.generic.base import TemplateView
 from projects.models import Project, ProjectCategory
+from contents.models import Content
 
 class HomePageView(TemplateView):
     template_name = "home.html"
@@ -7,6 +8,10 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
         context['projects'] = Project.objects.filter(home=1)
+        content = {}
+        for c in Content.objects.filter(page__name='Home'):
+            content[c.key.lower().replace(" ", "_")] = c.text
+        context['content'] = content
         return context
 
 class ProjectsPageView(TemplateView):

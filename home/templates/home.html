@@ -14,23 +14,23 @@
 			</video>
 		</div>
 		<div class="flex-column min-full-size justify-center">
-			<h1 class="title big">Soluções com Drones</h1>
-			<p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+			<h1 class="title big">{{ content.titulo }}</h1>
+			<p class="subtitle">{{ content.subtitulo }}</p>
 			<a href="#contact" class="o-button-reverse">Contato</a>
 		</div>
 	</div>
 	<div class="flex justify-center section-title_container">
-		<h2 class="title dark text-center">Quem Somos</h2>
+		<h2 class="title dark text-center">{{ content.titulo_quem_somos }}</h2>
 	</div>
 	<div class="flex-column justify-center description">
 		<div class="description-content">
-			<h4 class="subtitle">Uma breve introdução</h4>
-			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam debitis voluptatem porro ut quod hic dolorem ullam aliquam accusamus, beatae quam deleniti quidem minima exercitationem. Cum rerum id, accusamus ea! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim distinctio, sequi officia quibusdam a accusantium rerum quis vel ad fuga. Earum itaque deleniti doloribus veniam accusamus aliquid corrupti provident adipisci.</p>
+			<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
+			<p class="light-text">{{ content.texto_quem_somos }}</p>
 		</div>
 	</div>
 	<div class="flex paraxify justify-center triangles service-title">
 		<div class="overlay"></div>
-		<h2 class="title white big text-center">Nossos Serviços</h2>
+		<h2 class="title white big text-center">{{ content.titulo_servicos }}</h2>
 	</div>
 	<div class="flex full-w service-item_container">
 		<div class="flex-column service-item">
@@ -76,7 +76,7 @@
 	</div>
 	{% if projects %}
 		<div class="flex justify-center bg-light section-title_container">
-			<h2 class="title dark text-center">Projetos Recentes</h2>
+			<h2 class="title dark text-center">{{ content.titulo_projetos }}</h2>
 		</div>
 		<div class="flex-column full-w">
 			{% for p in projects %}
@@ -112,7 +112,7 @@
 	{% endif %}
 	<div class="flex-column">
 		<br><br><br><br>
-		<h2 class="title dark text-center">Nossos Clientes</h2>
+		<h2 class="title dark text-center">{{ content.titulo_depoimentos }}</h2>
 		<div class="clients-container flex justify-center">
 			<div class="flex-column client text-center">
 				<img class="client-img" src="{% static 'img/avatar.jpg' %}" alt="">
@@ -125,11 +125,11 @@
 	</div>
 	<div id="contact" class="contact-container flex start full-w">
 		<div class="contact-info flex-column start">
-			<h2 class="title dark text-center" style="margin-top:0;">Contato</h2>
-			<span class="light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nobis aspernatur accusamus cum repellendus inventore cupiditate adipisci dolor, fugiat nemo necessitatibus ducimus! Fugit dolorem atque nemo quisquam veritatis modi excepturi?</span>
+			<h2 class="title dark text-center" style="margin-top:0;">{{ content.titulo_contato }}</h2>
+			<span class="light-text">{{ content.texto_contato }}</span>
 			<br>
-			<span class="dark detail-text">Av das Américas 8888, Rio de Janeiro, Brasil</span>
-			<span class="dark detail-text">(102) 3456 789 / info@thememove.com</span>
+			<span class="dark detail-text">{{ content.endereco_contato }}</span>
+			<span class="dark detail-text">{{ content.numero_e_email }}</span>
 			<br>
 			<div class="flex contact-info_icons">
 				<a target="_blank" href="https://www.facebook.com/myviewdrones/"><i class="icon-button fa fa-facebook"></i></a>

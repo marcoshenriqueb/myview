@@ -13,6 +13,7 @@ class ProjectCategory(models.Model):
 
     def __str__(self):
         return self.name
+
 class Project(models.Model):
     user = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name="Usuário")
     name = models.CharField("Nome", max_length=255)

@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Project, ProjectCategory, ProjectPhoto
-import logging
 
 class PhotosInline(admin.TabularInline):
     exclude = ('user',)
