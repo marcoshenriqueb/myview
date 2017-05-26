@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}
+    MyView - Projetos
+{% endblock %}
+{% block content %}
+    {% load static %}   
+    {% get_media_prefix as media_prefix %}
+    <div class="flex-column justify-center courses-top">
+        <h2 class="title text-center white">Venha aprender com a MyView</h2>
+        <span class="text-center white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+    </div>
+{% endblock %}

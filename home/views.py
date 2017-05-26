@@ -33,3 +33,6 @@ class SingleProjectPageView(TemplateView):
 
 class ServicesPageView(TemplateView):
     template_name = "services.html"
+
+class CoursesPageView(TemplateView):
+    template_name = "courses.html"
