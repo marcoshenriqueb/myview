@@ -7,6 +7,15 @@ import Shuffle from 'shufflejs';
 import Vimeo from '@vimeo/player';
 
 document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('scroll', () => {
+        const scroll = document.body.scrollTop;
+        if (scroll > 400) {
+            document.querySelector('.header').classList.add('affix');
+        } else {
+            document.querySelector('.header').classList.remove('affix');
+        }
+    });
+
     document.getElementById('mobile-menu').addEventListener('click', () => {
         document.querySelector('header.header').classList.toggle('active');
     });
