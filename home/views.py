@@ -30,3 +30,6 @@ class SingleProjectPageView(TemplateView):
         context = super(SingleProjectPageView, self).get_context_data(**kwargs)
         context['project'] = Project.objects.get(pk=kwargs['id'])
         return context
+
+class ServicesPageView(TemplateView):
+    template_name = "services.html"

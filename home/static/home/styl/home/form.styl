@@ -22,7 +22,7 @@ input
 .button, .o-button-reverse, .o-button    
     font-family: 'Montserrat', sans-serif
 
-.button, .icon-button, .o-button-reverse, .o-button
+.button, .icon-button, .o-button-reverse, .o-button, .o-icon-button
     color white
     letter-spacing 1px
     font-size 13px
@@ -60,7 +60,7 @@ input
         color secondarycolor
         border-color secondarycolor
 
-.icon-button
+.icon-button, .o-icon-button
     border-radius 25px
     height 50px
     width 50px
@@ -68,10 +68,20 @@ input
     align-items center
     justify-content center
     font-size 15px
+    
+.icon-button
     background-color darkcolor
     border 1px solid darkcolor
     &:hover, &:active, &:focus
         background-color: secondarycolor
+        border-color secondarycolor
+
+.o-icon-button
+    color white
+    background-color transparent
+    border 2px solid white
+    &:hover, &:active, &:focus
+        color secondarycolor
         border-color secondarycolor
 
 .button-square

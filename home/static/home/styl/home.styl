@@ -69,6 +69,13 @@ a
 .section-title_container
     height: 252px
 
+.page-title
+    height 150px
+    justify-content center
+    padding 1rem
+    .subtitle
+        font-size 18px
+
 .title
     font-size: 24px
     letter-spacing: 2px
@@ -165,6 +172,10 @@ a
     left: 0
 
 @media(min-width:768px)
+    .page-title
+        justify-content flex-start
+        padding 4rem
+    
     .title
         font-size: 32px
         &.big
@@ -182,4 +193,5 @@ a
 @import './footer'
 @import './projects'
 @import './single-project'
+@import './services'
 
