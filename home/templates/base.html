@@ -41,7 +41,22 @@
         </header>
 
         {% block content %}{% endblock %}
-
+        
+        <div class="pre-footer flex start full-w">
+            <div class="pre-footer_item flex-column start">
+                <div class="footer-logo">
+                    <a href="{% url 'home' %}"><img src="{% static 'img/logo-white.png' %}" alt=""></a>
+                </div>
+                <p class="light-text white footer-logo_text">Lorem ipsum dolor sit amet, consect etur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.</p>
+                <a href="#contact" class="o-button-reverse footer-logo_btn">Contato</a>     
+            </div>
+            <div class="pre-footer_item flex-column start">
+                <span class="light-label pre-footer_item_title">Entre em contato</span>
+                <span class="light-text white"><span class="fa fa-location"></span>14 Tottenham Court Road, London, England</span>
+                <span class="light-text white">(102) 3456 789</span>
+                <span class="light-text white">support@cmssuperheroes.com</span>
+            </div>
+        </div>
         <footer class="footer flex justify-center white">
             <span class="detail-text">Copyright © 2017 MyView</span>
         </footer>
