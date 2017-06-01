@@ -5,8 +5,31 @@
 {% block content %}
     {% load static %}   
     {% get_media_prefix as media_prefix %}
-    <div class="flex-column justify-center courses-top">
-        <h2 class="title text-center white">Venha aprender com a MyView</h2>
-        <span class="text-center white">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>
+    <div class="flex-column justify-center courses-top triangles"></div>
+    <div class="flex-column justify-center section-title_container courses-title">
+        <h2 class="title dark text-center">Venha aprender com a MyView</h2>
+        <span class="text-center light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis tenetur ab cumque maiores est et ullam, totam harum esse impedit accusantium nihil voluptas eligendi? Nulla dolor similique delectus modi minima.</span>
     </div>
+    <div class="courses-content flex-column start full-w">
+        <div class="courses-item full-w">
+            <img src="http://via.placeholder.com/250x250" alt="">
+            <div class="flex-column start">
+                <span class="dark-label big">Titulo curso 1</span>
+                <p class="light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ipsa modi doloremque nostrum voluptatem eaque natus ratione, numquam molestiae minus libero odio ullam debitis obcaecati omnis atque laboriosam? Sed, laboriosam.</p>
+                <button class="button">Contato</button>
+            </div>
+        </div>
+        <br>
+        <div class="courses-item full-w">
+            <img src="http://via.placeholder.com/250x250" alt="">
+            <div class="flex-column start">
+                <span class="dark-label big">Titulo curso 2</span>
+                <p class="light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ipsa modi doloremque nostrum voluptatem eaque natus ratione, numquam molestiae minus libero odio ullam debitis obcaecati omnis atque laboriosam? Sed, laboriosam.</p>
+                <button class="button">Contato</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
 {% endblock %}

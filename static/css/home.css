@@ -1255,8 +1255,40 @@ input {
 }
 .courses-top {
   margin-top: 100px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.3)), to(rgba(0,0,0,0.3))), url("/static/img/drone-courses.jpg");
-  background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("/static/img/drone-courses.jpg");
+  background: url("/static/img/drone-courses.jpg");
   background-position: center center;
   height: 300px;
+  position: relative;
+}
+.courses-title,
+.courses-content {
+  padding: 0 1.5rem;
+}
+.courses-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.courses-item img {
+  margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+  .courses-title,
+  .courses-content {
+    padding: 0 8rem;
+  }
+  .courses-item {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .courses-item img {
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
 }
