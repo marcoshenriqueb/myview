@@ -514,7 +514,7 @@ a.big {
 }
 .testimonial {
   color: #888;
-  font-size: 18px;
+  font-size: 16px;
   font-style: italic;
   line-height: 22px;
 }
@@ -1021,9 +1021,23 @@ input {
     height: 50%;
   }
 }
-.client {
+#testimonial-container {
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease;
+}
+.clients-container {
   width: 100%;
-  padding: 2rem;
+  overflow: hidden;
+}
+.client {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin: 0;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  padding: 2rem 1rem;
 }
 .client-img {
   border-radius: 50%;
@@ -1031,9 +1045,14 @@ input {
 .client-name {
   margin-bottom: 0.4rem;
 }
+.client-controls span {
+  cursor: pointer;
+  margin: 0 1rem;
+}
 @media (min-width: 768px) {
   .client {
     width: 50%;
+    padding: 2rem 20%;
   }
 }
 .contact-container {

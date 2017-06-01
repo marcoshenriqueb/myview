@@ -86,6 +86,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Clients testimonials
+    let testPosition = 0;
+    const moveTestimonials = (direction) => {
+        const testContainer = document.getElementById('testimonial-container');
+        const testCount = document.querySelectorAll('.testimonial-content').length;
+        if (direction === 'right') {
+            if (testPosition < testCount - 1) {
+                const move = (testPosition + 1) * 100;
+                testContainer.style.transform = `translateX(-${move}%)`;
+                testPosition++;
+            } else {
+                testContainer.style.transform = 'translateX(0)';
+                testPosition = 0;
+            }
+        } else {
+            if (testPosition > 0) {
+                const move = (testPosition - 1) * 100;
+                testContainer.style.transform = `translateX(-${move}%)`;
+                testPosition--;
+            } else {
+                const move = (testCount - 1) * 100;
+                testContainer.style.transform = `translateX(-${move}%)`;
+                testPosition = testCount - 1;
+            }
+        }
+    };
+
+    const startTestimonials = (el, direction) => {
+        el.addEventListener('click', () => {
+            moveTestimonials(direction);
+        });
+    };
+
+    const arrowLeft = document.getElementById('testimonial-control-left');
+    const arrowRight = document.getElementById('testimonial-control-right');
+    if (arrowRight && arrowLeft) {
+        startTestimonials(arrowLeft, 'left');
+        startTestimonials(arrowRight, 'right');
+    }
+
     // Shuffle for projects page
     const grid = document.getElementById('grid');
     if (grid) {

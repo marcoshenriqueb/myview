@@ -1,13 +1,28 @@
-.client
+#testimonial-container
+    transition transform 300ms ease
+
+.clients-container
     width 100%
-    padding: 2rem
+    overflow hidden
+
+.client
+    flex-shrink 0
+    margin 0
+    flex-basis 100%
+    padding: 2rem 1rem
 
 .client-img
     border-radius 50%
     
 .client-name
     margin-bottom .4rem
+
+.client-controls
+    span
+        cursor pointer
+        margin 0 1rem
     
 @media(min-width:768px)
     .client
         width 50%
+        padding: 2rem 20%
