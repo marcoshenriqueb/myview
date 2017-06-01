@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'services',
     'projects',
     'contents',
+    'sorl.thumbnail',
+    'django_instagram',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

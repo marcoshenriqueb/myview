@@ -52,9 +52,32 @@
             </div>
             <div class="pre-footer_item flex-column start">
                 <span class="light-label pre-footer_item_title">Entre em contato</span>
-                <span class="light-text white"><span class="fa fa-location"></span>14 Tottenham Court Road, London, England</span>
-                <span class="light-text white">(102) 3456 789</span>
-                <span class="light-text white">support@cmssuperheroes.com</span>
+                <span class="light-text white"><span class="fa fa-map-marker"></span> 14 Tottenham Court Road, London, England</span>
+                <span class="light-text white"><span class="fa fa-phone"></span> (102) 3456 789</span>
+                <span class="light-text white"><span class="fa fa-envelope-o"></span> support@cmssuperheroes.com</span>
+            </div>
+            <div class="pre-footer_item flex-column start">
+                <span class="light-label pre-footer_item_title">Entre em contato</span>
+                <span class="light-text white"><span class="fa fa-map-marker"></span> 14 Tottenham Court Road, London, England</span>
+                <span class="light-text white"><span class="fa fa-phone"></span> (102) 3456 789</span>
+                <span class="light-text white"><span class="fa fa-envelope-o"></span> support@cmssuperheroes.com</span>
+            </div>
+            {% load instagram_client %}
+
+            {% instagram_user_recent_media myviewbr %}
+            <div class="pre-footer_item flex-column start">
+                <span class="light-label pre-footer_item_title">Instagram</span>
+                <div class="pre-footer_item_instagram_container full-w flex">
+                    {% for media in recent_media %}
+                    {% if forloop.counter <= 6 %}
+                    <div class="django_instagram_media_wall_item">
+                        <a href="https://www.instagram.com/p/{{ media.code }}/" target="_blank" title="{{ media.caption }}">
+                            <img src="{{ media.thumbnail_src|thumbnail }}"/>
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
         <footer class="footer flex justify-center white">
