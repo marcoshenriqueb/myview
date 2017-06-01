@@ -116,37 +116,29 @@
 			{% endfor %}
 		</div>
 	{% endif %}
-	<div class="flex-column">
-		<br><br><br><br>
-		<h2 class="title dark text-center">{{ content.titulo_depoimentos }}</h2>
-		<div class="clients-container justify-center">
-			<div id="testimonial-container" class="flex">
-				<div class="testimonial-content flex-column client text-center">
-					<img class="client-img" src="{% static 'img/avatar.jpg' %}" alt="">
-					<p class="dark-label client-name">Nome do Cliente</p>
-					<span class="light-text">Área ou setor</span>
-					<p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore eum accusamus delectus libero quo eaque soluta aliquam pariatur nihil quisquam ex ab, ratione alias, neque facere! Numquam labore rerum facilis?</p>
-				</div>
-				<div class="testimonial-content flex-column client text-center">
-					<img class="client-img" src="{% static 'img/avatar.jpg' %}" alt="">
-					<p class="dark-label client-name">Nome do Cliente 2</p>
-					<span class="light-text">Área ou setor</span>
-					<p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore eum accusamus delectus libero quo eaque soluta aliquam pariatur nihil quisquam ex ab, ratione alias, neque facere! Numquam labore rerum facilis?</p>
-				</div>
-				<div class="testimonial-content flex-column client text-center">
-					<img class="client-img" src="{% static 'img/avatar.jpg' %}" alt="">
-					<p class="dark-label client-name">Nome do Cliente 3</p>
-					<span class="light-text">Área ou setor</span>
-					<p class="testimonial">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore eum accusamus delectus libero quo eaque soluta aliquam pariatur nihil quisquam ex ab, ratione alias, neque facere! Numquam labore rerum facilis?</p>
+	{% if clients %}
+		<div class="flex-column">
+			<br><br><br><br>
+			<h2 class="title dark text-center">{{ content.titulo_depoimentos }}</h2>
+			<div class="clients-container justify-center">
+				<div id="testimonial-container" class="flex">
+					{% for c in clients %}
+						<div class="testimonial-content flex-column client text-center">
+							<img class="client-img" src="{{ media_prefix }}{{ c.photo }}" alt="">
+							<p class="dark-label client-name">{{ c.name }}</p>
+							<span class="light-text">{{ c.area }}</span>
+							<p class="testimonial">{{ c.testimonial }}</p>
+						</div>
+					{% endfor %}
 				</div>
 			</div>
+			<div class="full-w flex client-controls justify-center">
+				<span id="testimonial-control-left" class="fa fa-2x fa-angle-left"></span>
+				<span id="testimonial-control-right" class="fa fa-2x fa-angle-right"></span>
+			</div>
+			<br><br><br><br>
 		</div>
-		<div class="full-w flex client-controls justify-center">
-			<span id="testimonial-control-left" class="fa fa-2x fa-angle-left"></span>
-			<span id="testimonial-control-right" class="fa fa-2x fa-angle-right"></span>
-		</div>
-		<br><br><br><br>
-	</div>
+	{% endif %}
 	<div id="contact" class="contact-container flex start full-w">
 		<div class="contact-info flex-column start">
 			<h2 class="title dark text-center" style="margin-top:0;">{{ content.titulo_contato }}</h2>

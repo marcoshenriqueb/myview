@@ -1,12 +1,14 @@
 from django.views.generic.base import TemplateView
 from projects.models import Project, ProjectCategory
 from contents.models import Content
+from clients.models import Client
 
 class HomePageView(TemplateView):
     template_name = "home.html"
 
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
+        context['clients'] = Client.objects.all()
         context['projects'] = Project.objects.filter(home=1)
         content = {}
         for c in Content.objects.filter(page__name='Home'):
