@@ -7,8 +7,8 @@
     {% get_media_prefix as media_prefix %}
     <div class="flex-column justify-center courses-top triangles"></div>
     <div class="flex-column justify-center section-title_container courses-title">
-        <h2 class="title dark text-center">Venha aprender com a MyView</h2>
-        <span class="text-center light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis tenetur ab cumque maiores est et ullam, totam harum esse impedit accusantium nihil voluptas eligendi? Nulla dolor similique delectus modi minima.</span>
+        <h2 class="title dark text-center">{{ content.titulo_cursos }}</h2>
+        <span class="text-center light-text">{{ content.descricao_pagina_cursos }}</span>
     </div>
     <div class="courses-content flex-column start full-w">
         {% for c in courses %}

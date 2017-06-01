@@ -52,3 +52,12 @@ class Command(BaseCommand):
 
         c = Content(key='Descricao rodape', page=footer, text='Lorem ipsum dolor sit amet, consect etur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.', user_id=1)
         c.save()
+
+        courses = Page(name='Cursos', user_id=1)
+        courses.save()
+
+        c = Content(key='Titulo cursos', page=footer, text='Venha aprender com a MyView', user_id=1)
+        c.save()
+
+        c = Content(key='Descricao pagina cursos', page=footer, text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis tenetur ab cumque maiores est et ullam, totam harum esse impedit accusantium nihil voluptas eligendi? Nulla dolor similique delectus modi minima.', user_id=1)
+        c.save()
