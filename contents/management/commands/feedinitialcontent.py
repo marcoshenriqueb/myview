@@ -41,5 +41,14 @@ class Command(BaseCommand):
         c = Content(key='Endereco contato', page=home, text='Av das Américas 8888, Rio de Janeiro, Brasil', user_id=1)
         c.save()
 
-        c = Content(key='Numero e email', page=home, text='(102) 3456 789 / info@thememove.com', user_id=1)
+        c = Content(key='Telefone', page=home, text='+5521888552014', user_id=1)
+        c.save()
+
+        c = Content(key='Email', page=home, text='info@thememove.com', user_id=1)
+        c.save()
+
+        footer = Page(name='Rodape', user_id=1)
+        footer.save()
+
+        c = Content(key='Descricao rodape', page=footer, text='Lorem ipsum dolor sit amet, consect etur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.', user_id=1)
         c.save()

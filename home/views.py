@@ -2,6 +2,7 @@ from django.views.generic.base import TemplateView
 from projects.models import Project, ProjectCategory
 from contents.models import Content
 from clients.models import Client
+from courses.models import Course
 
 class HomePageView(TemplateView):
     template_name = "home.html"
@@ -11,7 +12,7 @@ class HomePageView(TemplateView):
         context['clients'] = Client.objects.all()
         context['projects'] = Project.objects.filter(home=1)
         content = {}
-        for c in Content.objects.filter(page__name='Home'):
+        for c in Content.objects.all():
             content[c.key.lower().replace(" ", "_")] = c.text
         context['content'] = content
         return context
@@ -23,6 +24,10 @@ class ProjectsPageView(TemplateView):
         context = super(ProjectsPageView, self).get_context_data(**kwargs)
         context['projects'] = Project.objects.all()
         context['categories'] = ProjectCategory.objects.filter(projects__isnull=False)
+        content = {}
+        for c in Content.objects.all():
+            content[c.key.lower().replace(" ", "_")] = c.text
+        context['content'] = content
         return context
 
 class SingleProjectPageView(TemplateView):
@@ -31,10 +36,33 @@ class SingleProjectPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(SingleProjectPageView, self).get_context_data(**kwargs)
         context['project'] = Project.objects.get(pk=kwargs['id'])
+        content = {}
+        for c in Content.objects.all():
+            content[c.key.lower().replace(" ", "_")] = c.text
+        context['content'] = content
         return context
 
 class ServicesPageView(TemplateView):
     template_name = "services.html"
 
+    def get_context_data(self, **kwargs):
+        context = super(ServicesPageView, self).get_context_data(**kwargs)
+        content = {}
+        for c in Content.objects.all():
+            content[c.key.lower().replace(" ", "_")] = c.text
+        context['content'] = content
+        return context
+
+
 class CoursesPageView(TemplateView):
     template_name = "courses.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(CoursesPageView, self).get_context_data(**kwargs)
+        context['courses'] = Course.objects.all()
+        content = {}
+        for c in Content.objects.all():
+            content[c.key.lower().replace(" ", "_")] = c.text
+        context['content'] = content
+        return context
+

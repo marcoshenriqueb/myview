@@ -11,26 +11,18 @@
         <span class="text-center light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis tenetur ab cumque maiores est et ullam, totam harum esse impedit accusantium nihil voluptas eligendi? Nulla dolor similique delectus modi minima.</span>
     </div>
     <div class="courses-content flex-column start full-w">
-        <div class="courses-item full-w">
-            <img src="http://via.placeholder.com/250x250" alt="">
-            <div class="flex-column start">
-                <span class="dark-label big">Titulo curso 1</span>
-                <p class="light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ipsa modi doloremque nostrum voluptatem eaque natus ratione, numquam molestiae minus libero odio ullam debitis obcaecati omnis atque laboriosam? Sed, laboriosam.</p>
-                <form action="{% url 'home' %}#contact">
-                    <button class="button">Contato</button>
-                </form>
+        {% for c in courses %}
+            <div class="courses-item full-w">
+                <img height="250" width="250" src="{{ media_prefix }}{{ c.photo }}" alt="">
+                <div class="flex-column start">
+                    <span class="dark-label big">{{ c.name }}</span>
+                    <p class="light-text">{{ c.description }}</p>
+                    <form action="{% url 'home' %}#contact">
+                        <button class="button">Contato</button>
+                    </form>
+                </div>
             </div>
-        </div>
-        <div class="courses-item full-w">
-            <img src="http://via.placeholder.com/250x250" alt="">
-            <div class="flex-column start">
-                <span class="dark-label big">Titulo curso 2</span>
-                <p class="light-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ipsa modi doloremque nostrum voluptatem eaque natus ratione, numquam molestiae minus libero odio ullam debitis obcaecati omnis atque laboriosam? Sed, laboriosam.</p>
-                <form action="{% url 'home' %}#contact">
-                    <button class="button">Contato</button>
-                </form>
-            </div>
-        </div>
+        {% endfor %}
     </div>
     <br>
     <br>
