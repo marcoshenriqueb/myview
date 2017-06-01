@@ -124,6 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (arrowRight && arrowLeft) {
         startTestimonials(arrowLeft, 'left');
         startTestimonials(arrowRight, 'right');
+        setInterval(() => {
+            moveTestimonials('right');
+        }, 8000);
     }
 
     // Shuffle for projects page
