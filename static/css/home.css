@@ -1266,6 +1266,7 @@ input {
   padding: 0;
 }
 .special-service_img {
+  position: relative;
   width: 100%;
   overflow: hidden;
   margin-bottom: 1rem;
@@ -1273,6 +1274,16 @@ input {
 .special-service_img img {
   width: 100%;
   height: auto;
+}
+.special-service_overlay {
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #59d7c5;
+  opacity: 0.1;
 }
 .special-service_content ul {
   list-style: none;
