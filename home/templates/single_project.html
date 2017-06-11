@@ -3,6 +3,7 @@
     MyView - {{ project.name|truncatechars:10 }}
 {% endblock %}
 {% block content %}
+    {% load static %}
     {% get_media_prefix as media_prefix %}
     <div class="flex bg-light page-title">
         <h2 class="subtitle dark text-center">{{ project.name }}</h2>
