@@ -23,7 +23,7 @@ class ProjectsPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(ProjectsPageView, self).get_context_data(**kwargs)
         context['projects'] = Project.objects.all()
-        context['categories'] = ProjectCategory.objects.filter(projects__isnull=False)
+        context['categories'] = ProjectCategory.objects.filter(projects__isnull=False).distinct()
         content = {}
         for c in Content.objects.all():
             content[c.key.lower().replace(" ", "_")] = c.text
