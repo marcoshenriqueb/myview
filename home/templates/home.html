@@ -22,7 +22,7 @@
 				<a target="_blank" href="https://vimeo.com/user51265724"><i class="o-icon-button fa fa-vimeo"></i></a>
 				<a target="_blank" href="https://www.youtube.com/channel/UC1JyE1jSGskez0KXZax8wLg"><i class="o-icon-button fa fa-youtube-play"></i></a>
 			</div>
-			<a href="#contact" class="o-button-reverse">Contato</a>
+			<a href="{% url 'contact' %}" class="o-button-reverse">Contato</a>
 		</div>
 	</div>
 	<div class="flex justify-center section-title_container">
@@ -30,7 +30,7 @@
 	</div>
 	<div class="flex-column justify-center description">
 		<div class="description-content">
-			<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
+			<h4 style="margin-top:0;" class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
 			<p class="light-text">{{ content.texto_quem_somos }}</p>
 		</div>
 	</div>
@@ -139,29 +139,9 @@
 			<br><br><br><br>
 		</div>
 	{% endif %}
-	<div id="contact" class="contact-container flex start full-w">
-		<div class="contact-info flex-column start">
-			<h2 class="title dark text-center" style="margin-top:0;">{{ content.titulo_contato }}</h2>
-			<span class="light-text">{{ content.texto_contato }}</span>
-			<br>
-			<span class="dark detail-text">{{ content.endereco_contato }}</span>
-			<span class="dark detail-text">{{ content.telefone }} / {{ content.email }}</span>
-			<br>
-			<div class="flex contact-info_icons">
-				<a target="_blank" href="https://www.facebook.com/myviewdrones/"><i class="icon-button fa fa-facebook"></i></a>
-				<a target="_blank" href="https://www.instagram.com/myviewbr/"><i class="icon-button fa fa-instagram"></i></a>
-				<a target="_blank" href="https://vimeo.com/user51265724"><i class="icon-button fa fa-vimeo"></i></a>
-				<a target="_blank" href="https://www.youtube.com/channel/UC1JyE1jSGskez0KXZax8wLg"><i class="icon-button fa fa-youtube-play"></i></a>
-			</div>
-		</div>
-		<div class="contact-form">
-			<div class="flex half-form_container">
-				<input type="text" placeholder="Nome" name="name" class="half-form">
-				<input type="text" placeholder="Telefone" name="phone" class="half-form">
-			</div>
-			<input type="text" placeholder="email" name="Email">
-			<textarea name="message" placeholder="Mensagem" id="" cols="30" rows="5"></textarea>
-			<button class="button">Enviar</button>
-		</div>
+	<div id="contact" class="newsletter-container bg-light flex justify-center full-w">
+		<span class="dark-label">{{ content.label_newsletter }}</span>
+		<input type="text" placeholder="Digite o seu email" name="email">
+		<button class="button">Enviar</button>
 	</div>
 {% endblock %}

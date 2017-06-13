@@ -1,0 +1,34 @@
+.courses-top
+    margin-top 100px
+    background url('/static/img/drone-courses.jpg')
+    background-position center center
+    height 300px
+    position relative
+    
+.courses-title
+    padding 0 1.5rem
+
+.courses-content
+    padding 2rem 1.5rem
+
+.courses-item
+    display flex
+    flex-direction column
+    margin-bottom 4rem
+    &:last-child
+        margin-bottom 0
+    img
+        margin-bottom 2rem
+
+@media(min-width 768px)
+    .courses-title
+        padding 0 8rem
+
+    .courses-content
+        padding 4rem 8rem
+
+    .courses-item
+        flex-direction row
+        img
+            margin-bottom 0
+            margin-right 2rem

@@ -26,7 +26,7 @@
                         <a href="{% url 'services' %}"><li>Soluções e Serviços</li></a>
                         <a href="{% url 'projects' %}"><li>Portfólio</li></a>
                         <a href="{% url 'courses' %}"><li>MyView Academy</li></a>     
-                        <a href="#"><li>Pilotos</li></a>
+                        <a href="{% url 'contact' %}"><li>Contato</li></a>
                     </ul>
                     <span id="mobile-menu" class="fa fa-bars"></span>
                 </div>
@@ -36,7 +36,7 @@
                 <a href="{% url 'services' %}"><li>Soluções e Serviços</li></a>
                 <a href="{% url 'projects' %}"><li>Portfólio</li></a>
                 <a href="{% url 'courses' %}"><li>MyView Academy</li></a>
-                <a href="#"><li>Pilotos</li></a>
+                <a href="{% url 'contact' %}"><li>Contato</li></a>
             </ul>
         </header>
 
@@ -48,7 +48,7 @@
                     <a href="{% url 'home' %}"><img src="{% static 'img/logo-white.png' %}" alt=""></a>
                 </div>
                 <p class="light-text white footer-logo_text">{{ content.descricao_rodape }}</p>
-                <a href="#contact" class="o-button-reverse footer-logo_btn">Contato</a>     
+                <a href="{% url 'contact' %}" class="o-button-reverse footer-logo_btn">Contato</a>     
             </div>
             <div class="pre-footer_item flex-column start">
             </div>
