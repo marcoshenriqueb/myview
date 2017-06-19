@@ -48,15 +48,16 @@
                     <a href="{% url 'home' %}"><img src="{% static 'img/logo-white.png' %}" alt=""></a>
                 </div>
                 <p class="light-text white footer-logo_text">{{ content.descricao_rodape }}</p>
-                <a href="{% url 'contact' %}" class="o-button-reverse footer-logo_btn">Contato</a>     
             </div>
             <div class="pre-footer_item flex-column start">
             </div>
             <div class="pre-footer_item flex-column start">
-                <span class="light-label pre-footer_item_title">Entre em contato</span>
+                <span class="light-label pre-footer_item_title">{{ content.titulo_contato_rodape }}</span>
                 <span class="light-text white"><span class="fa fa-map-marker"></span> {{ content.endereco_contato }}</span>
                 <span class="light-text white"><span class="fa fa-phone"></span> {{ content.telefone }}</span>
                 <span class="light-text white"><span class="fa fa-envelope-o"></span> {{ content.email }}</span>
+                <br>
+                <a href="{% url 'contact' %}" class="o-button-reverse footer-logo_btn">Contato</a>     
             </div>
             {% load instagram_client %}
 

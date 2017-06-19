@@ -25,6 +25,7 @@ class Project(models.Model):
     category = models.ForeignKey(ProjectCategory, on_delete=models.CASCADE, verbose_name="Categoria", related_name="projects")
     vimeo = models.CharField("Embed vimeo", max_length=255, null=True, blank=True)
     home = models.BooleanField("Colocar na home", default=False)
+    coverphoto = models.ImageField("Foto de capa", upload_to='projectcoverphotos/%Y/%m/%d/', max_length=255, null=True, blank=True)
     created_at = models.DateTimeField("Criado em", auto_now=False, auto_now_add=True)
     updated_at = models.DateTimeField("Atualizado em", auto_now=True, auto_now_add=False)
 

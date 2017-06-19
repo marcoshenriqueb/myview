@@ -15,7 +15,6 @@
                 <span id="{{ c.id }}" class="o-button project-filter-button">{{ c.name }}</span>
             {% endfor %}
         </div>
-        <br>
         <div id="grid" class="projects-content_items full-w">
             {% for p in projects %}
                 <div class="projects-content_item" data-groups='["{{ p.category.id }}"]'>
@@ -25,7 +24,7 @@
                         <br>
                         <a href="{% url 'project' p.id %}" class="big">{{ p.name|truncatechars:40 }}</a>
                     </div>
-                    <img src="{{ media_prefix }}{{ p.photos.all.0.photo }}" width="160" alt="">
+                    <img src="{{ media_prefix }}{{ p.coverphoto }}" width="160" alt="">
                 </div>
             {% endfor %}
         </div>

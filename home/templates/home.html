@@ -9,8 +9,8 @@
 		<div class="video-container">
 			<div class="filter"></div>
 			<video autoplay loop class="full-w" muted>
-				<source src="{% static 'videos/myview2.mp4' %}" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
-				<source src="{% static 'videos/myview2.webm' %}" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+				<source src="{% static 'videos/myview3.mp4' %}" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+				<source src="{% static 'videos/myview3.webm' %}" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
 			</video>
 		</div>
 		<div class="flex-column min-full-size justify-center">
@@ -25,13 +25,13 @@
 			<a href="{% url 'contact' %}" class="o-button-reverse">Contato</a>
 		</div>
 	</div>
-	<div class="flex justify-center section-title_container">
+	<div class="flex justify-center section-title_container" style="">
 		<h2 class="title dark text-center">{{ content.titulo_quem_somos }}</h2>
 	</div>
 	<div class="flex-column justify-center description">
 		<div class="description-content">
-			<h4 style="margin-top:0;" class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
-			<p class="light-text">{{ content.texto_quem_somos }}</p>
+			<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
+			<p style="white-space:pre-wrap;" class="light-text">{{ content.texto_quem_somos }}</p>
 		</div>
 	</div>
 	<div class="flex paraxify justify-center triangles service-title">
@@ -97,8 +97,7 @@
 									{% if p.vimeo %}
 										<a href="" data-id="{{ p.vimeo }}" class="button-square start-video">Ampliar</a>
 									{% endif %}
-									<a href="" class="button-square">Info</a>
-									<a href="{% url 'project' p.id %}" class="button-square">Abrir</a>
+									<a href="{% url 'project' p.id %}" class="button-square">Info</a>
 								</div>
 							</div>
 							<img src="{{ media_prefix }}{{ p.photos.all.1.photo }}" alt="">
@@ -117,8 +116,7 @@
 		</div>
 	{% endif %}
 	{% if clients %}
-		<div class="flex-column">
-			<br><br><br><br>
+		<div class="flex-column testimonial-section">
 			<h2 class="title dark text-center">{{ content.titulo_depoimentos }}</h2>
 			<div class="clients-container justify-center">
 				<div id="testimonial-container" class="flex">
@@ -136,7 +134,6 @@
 				<span id="testimonial-control-left" class="fa fa-2x fa-angle-left"></span>
 				<span id="testimonial-control-right" class="fa fa-2x fa-angle-right"></span>
 			</div>
-			<br><br><br><br>
 		</div>
 	{% endif %}
 	<div id="contact" class="newsletter-container bg-light flex justify-center full-w">

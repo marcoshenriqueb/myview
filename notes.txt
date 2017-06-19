@@ -1,19 +1,12 @@
-- Trocar video
-
-- rede social em cima também
-
-- Página do curso
-
-- Serviços especiais
-
 - Rede de pilotos
-
 - Colocar video na página de projeto.
+- Lead newsletter site contato@myview.com
+- Video de capa diminuir o tamanho
 
-- Menu fixo
-- segundo CTA no topo
-- CTA embaixo de serviços 
+Ampliar foto nos projetos da home
+Safari problema na pagina de portfolio
 
-- Serviços
-http://demo.cmssuperheroes.com/themeforest/wp_piero_clean/page/our-services/our-services-2/
-https://www.waveoc.com/services
+
+Completar no DB
+Titulo contato rodape
+endereco_contato_complemento
