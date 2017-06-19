@@ -96,6 +96,8 @@
 								<div class="flex">
 									{% if p.vimeo %}
 										<a href="" data-id="{{ p.vimeo }}" class="button-square start-video">Ampliar</a>
+									{% else %}
+										<a href="" data-src="{{ p.photos.all.1.photo }}" class="button-square start-photo">Ampliar</a>
 									{% endif %}
 									<a href="{% url 'project' p.id %}" class="button-square">Info</a>
 								</div>

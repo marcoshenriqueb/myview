@@ -86,6 +86,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Vimeo lightbox
+    document.querySelectorAll('.start-photo').forEach((d) => {
+        d.addEventListener('click', (e) => {
+            e.preventDefault();
+            const overlay = document.createElement('div');
+            overlay.id = 'body-overlay';
+            overlay.classList.add('body-overlay');
+            document.body.appendChild(overlay);
+            const close = document.createElement('span');
+            close.classList.add('fa');
+            close.classList.add('fa-close');
+            close.addEventListener('click', () => {
+                overlay.parentNode.removeChild(overlay);
+            });
+            overlay.addEventListener('click', (e) => {
+                if (e.target.id === 'body-overlay') {
+                    overlay.parentNode.removeChild(overlay);
+                }
+            });
+            overlay.appendChild(close);
+            const photo = document.createElement('img');
+            photo.src = `/media/${e.target.dataset.src}`;
+            photo.style.maxWidth = `${(overlay.offsetWidth * 0.8).toFixed(0)}px`;
+            photo.style.maxHeight = `${(overlay.offsetHeight * 0.8).toFixed(0)}px`;
+            console.log((overlay.offsetWidth * 0.8).toFixed(0));
+            overlay.appendChild(photo);
+        });
+    });
+
     // Clients testimonials
     let testPosition = 0;
     const moveTestimonials = (direction) => {
