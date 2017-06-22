@@ -3,10 +3,9 @@
 - Lead newsletter site contato@myview.com
 - Video de capa diminuir o tamanho
 
-Ampliar foto nos projetos da home
 Safari problema na pagina de portfolio
 
 
-Completar no DB
-Titulo contato rodape
-endereco_contato_complemento
+Cadastrar
+- dois serviços e duas soluções
+- titulo serviços especiais

@@ -32,56 +32,52 @@
 		<div class="description-content">
 			<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
 			<p style="white-space:pre-wrap;" class="light-text">{{ content.texto_quem_somos }}</p>
+			<div class="flex">
+				<img height="80" src="{% static 'img/cert1.png' %}" alt="certificado 1">
+				<img height="80" src="{% static 'img/cert2.png' %}" alt="certificado 2">
+			</div>
 		</div>
 	</div>
-	<div class="flex paraxify justify-center triangles service-title">
-		<div class="overlay"></div>
-		<h2 class="title white big text-center">{{ content.titulo_servicos }}</h2>
-	</div>
-	<div class="flex full-w service-item_container">
-		<div class="flex-column service-item">
-			<i class="fa fa-3x fa-envelope-open-o"></i>
-			<span class="dark-label">Web Design</span>
-			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+	{% if services %}
+		<div class="flex paraxify justify-center triangles service-title">
+			<div class="overlay"></div>
+			<h2 class="title white big text-center">{{ content.titulo_servicos }}</h2>
 		</div>
-		<div class="flex-column service-item">
-			<i class="fa fa-3x fa-envelope-open-o"></i>
-			<span class="dark-label">Web Design</span>
-			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
+		<div class="flex full-w service-item_container">
+			{% for s in services %}
+				<div class="flex-column service-item">
+					<img src="{{ media_prefix }}{{ s.icon }}" alt="{{ s.name }}">
+					<span class="dark-label">{{ s.name }}</span>
+					<p class="light-text">{{ s.description_home }}</p>
+				</div>
+			{% endfor %}
 		</div>
-		<div class="flex-column service-item">
-			<i class="fa fa-3x fa-envelope-open-o"></i>
-			<span class="dark-label">Web Design</span>
-			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-		</div>
-		<div class="flex-column service-item">
-			<i class="fa fa-3x fa-envelope-open-o"></i>
-			<span class="dark-label">Web Design</span>
-			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-		</div>
-		<div class="flex-column service-item">
-			<i class="fa fa-3x fa-envelope-open-o"></i>
-			<span class="dark-label">Web Design</span>
-			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-		</div>
-		<div class="flex-column service-item">
-			<i class="fa fa-3x fa-envelope-open-o"></i>
-			<span class="dark-label">Web Design</span>
-			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-		</div>
-		<div class="flex-column service-item">
-			<i class="fa fa-3x fa-envelope-open-o"></i>
-			<span class="dark-label">Web Design</span>
-			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-		</div>
-		<div class="flex-column service-item">
-			<i class="fa fa-3x fa-envelope-open-o"></i>
-			<span class="dark-label">Web Design</span>
-			<p class="light-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</p>
-		</div>
-	</div>
+	{% endif %}
+	{% if solutions %}
+        <div class="flex justify-center bg-light section-title_container">
+            <h2 class="title dark text-center">{{ content.titulo_solucoes }}</h2>
+        </div>
+        <div class="flex-column full-w bg-light">
+            {% for s in solutions %}
+                <div class="flex special-service full-w">
+                    <div class="special-service_img">
+                        <div class="special-service_overlay"></div>
+                        <img src="{{ media_prefix }}{{ s.photo }}" alt="{{ s.name }}">
+                    </div>
+                    <div class="flex-column start special-service_content">
+                        <span class="dark-label big">{{ s.name }}</span>
+                        <br>
+                        <div style="width:30px;height:4px;background:#5bd7c5;margin-bottom:34px;"></div>
+                        <ul>
+                            <li style="white-space:pre-wrap;" class="light-text">{{ s.description }}</li>
+                        </ul>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
 	{% if projects %}
-		<div class="flex justify-center bg-light section-title_container">
+		<div class="flex justify-center section-title_container">
 			<h2 class="title dark text-center">{{ content.titulo_projetos }}</h2>
 		</div>
 		<div class="flex-column full-w">

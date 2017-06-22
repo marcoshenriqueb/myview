@@ -3,6 +3,7 @@ from projects.models import Project, ProjectCategory
 from contents.models import Content
 from clients.models import Client
 from courses.models import Course
+from services.models import Service, Solution
 
 class HomePageView(TemplateView):
     template_name = "home.html"
@@ -11,6 +12,8 @@ class HomePageView(TemplateView):
         context = super(HomePageView, self).get_context_data(**kwargs)
         context['clients'] = Client.objects.all()
         context['projects'] = Project.objects.filter(home=1)
+        context['services'] = Service.objects.all()
+        context['solutions'] = Solution.objects.filter(home=1)
         content = {}
         for c in Content.objects.all():
             content[c.key.lower().replace(" ", "_")] = c.text
@@ -47,6 +50,8 @@ class ServicesPageView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(ServicesPageView, self).get_context_data(**kwargs)
+        context['services'] = Service.objects.all()
+        context['solutions'] = Solution.objects.all()
         content = {}
         for c in Content.objects.all():
             content[c.key.lower().replace(" ", "_")] = c.text
