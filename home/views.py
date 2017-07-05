@@ -1,9 +1,18 @@
 from django.views.generic.base import TemplateView
+from django.views import View
+from django.http import HttpResponseRedirect
+from django.template.response import TemplateResponse
+from django.urls import reverse
+from django.core.mail import send_mail
+from django.contrib import messages
+from django.core.exceptions import ValidationError
 from projects.models import Project, ProjectCategory
 from contents.models import Content
 from clients.models import Client
 from courses.models import Course
 from services.models import Service, Solution
+from .forms import LeadForm, ContactForm
+import json
 
 class HomePageView(TemplateView):
     template_name = "home.html"
@@ -19,6 +28,25 @@ class HomePageView(TemplateView):
             content[c.key.lower().replace(" ", "_")] = c.text
         context['content'] = content
         return context
+
+class LeadView(View):
+    def post(self, request):
+        try:
+            form = LeadForm(request.POST)
+            if form.is_valid():
+                messages.add_message(request, messages.INFO, 'Seu email foi adicionado a nossa newsletter!')
+                send_mail(
+                    'ENTRADA DE LEAD PARA MAILLING',
+                    form.cleaned_data['email'],
+                    'myviewsolutions123@gmail.com',
+                    ['contato@myviewsolutions.com', 'thiago@myviewsolutions']
+                )
+            else:
+                messages.add_message(request, messages.INFO, 'Digite um email válido, por favor.')
+        except Exception as e:
+            messages.add_message(request, messages.INFO, 'Não conseguimos adicionar o email na newsletter, por favor tente novamente.')
+        return HttpResponseRedirect(reverse('home') + '#contact')
+    
 
 class ProjectsPageView(TemplateView):
     template_name = "projects.html"
@@ -71,13 +99,40 @@ class CoursesPageView(TemplateView):
         context['content'] = content
         return context
 
-class ContactPageView(TemplateView):
-    template_name = "contact.html"
 
-    def get_context_data(self, **kwargs):
-        context = super(ContactPageView, self).get_context_data(**kwargs)
+class ContactView(View):
+    def get(self, request):
+        context = {}
+        context['form'] = ContactForm()
         content = {}
         for c in Content.objects.all():
             content[c.key.lower().replace(" ", "_")] = c.text
         context['content'] = content
-        return context
+        return TemplateResponse(request, 'contact.html', context)
+
+    def post(self, request):
+        context = {}
+        content = {}
+        for c in Content.objects.all():
+            content[c.key.lower().replace(" ", "_")] = c.text
+        context['content'] = content
+        try:
+            form = ContactForm(request.POST)
+            if form.is_valid():
+                messages.add_message(request, messages.INFO, 'Obrigado pelo contato!')
+                send_mail(
+                    'Contato Site MyView',
+                    'Nome: %s, Email: %s, Telefone: %s, Mensagem: %s' % (
+                        form.cleaned_data['name'],
+                        form.cleaned_data['email'],
+                        form.cleaned_data['phone'],
+                        form.cleaned_data['message'],
+                    ),
+                    'myviewsolutions123@gmail.com',
+                    ['contato@myviewsolutions.com', 'thiago@myviewsolutions']
+                )
+                return HttpResponseRedirect(reverse('contact'))
+        except Exception as e:
+            messages.add_message(request, messages.INFO, 'Não conseguimos enviar a mensagem, por favor tente novamente.')
+        context['form'] = form
+        return TemplateResponse(request, 'contact.html', context)

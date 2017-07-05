@@ -5,6 +5,7 @@ import './../styl/home.styl';
 import './../js/paraxify';
 import Shuffle from 'shufflejs';
 import Vimeo from '@vimeo/player';
+import Inputmask from "inputmask";
 
 document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
@@ -193,4 +194,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     window.onresize = onResize;
+
+    Inputmask({ 'mask': '(99) [9]9999-9999' }).mask('.telephone-number');
 });

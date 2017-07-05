@@ -20,14 +20,25 @@
                 <a target="_blank" href="https://www.youtube.com/channel/UC1JyE1jSGskez0KXZax8wLg"><i class="icon-button fa fa-youtube-play"></i></a>
             </div>
         </div>
-        <div class="contact-form">
+        <form action="{% url 'contact' %}" method="POST" class="contact-form">
+            {% csrf_token %}
             <div class="flex half-form_container">
-                <input type="text" placeholder="Nome" name="name" class="half-form">
-                <input type="text" placeholder="Telefone" name="phone" class="half-form">
+                {{ form.name }}
+                {{ form.phone }}
             </div>
-            <input type="text" placeholder="email" name="Email">
-            <textarea name="message" placeholder="Mensagem" id="" cols="30" rows="5"></textarea>
-            <button class="button">Enviar</button>
-        </div>
+            {{ form.email }}
+            {{ form.message }}
+            <button class="button margin-b">Enviar</button><br>
+            {% if form.errors %}
+                {% for error, value in form.errors.items %}
+                    <span style="color:red;" class="light-text margin-b"><span style="text-transform:capitalize;">{{ error }}</span>: {{ value.as_text }}</span><br>
+                {% endfor %}
+            {% endif %}
+            {% if messages %}
+                {% for message in messages %}
+                    <span class="dark-label margin-b">{{ message }}</span>
+                {% endfor %}
+            {% endif %}
+        </form>
     </div>
 {% endblock %}
