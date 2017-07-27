@@ -39,7 +39,7 @@ class LeadView(View):
                     'ENTRADA DE LEAD PARA MAILLING',
                     form.cleaned_data['email'],
                     'myviewsolutions123@gmail.com',
-                    ['contato@myviewsolutions.com', 'thiago@myviewsolutions']
+                    ['contato@myviewsolutions.com', 'thiago@myviewsolutions.com']
                 )
             else:
                 messages.add_message(request, messages.INFO, 'Digite um email válido, por favor.')
@@ -129,7 +129,7 @@ class ContactView(View):
                         form.cleaned_data['message'],
                     ),
                     'myviewsolutions123@gmail.com',
-                    ['contato@myviewsolutions.com', 'thiago@myviewsolutions']
+                    ['contato@myviewsolutions.com', 'thiago@myviewsolutions.com']
                 )
                 return HttpResponseRedirect(reverse('contact'))
         except Exception as e:
