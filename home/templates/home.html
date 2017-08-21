@@ -32,9 +32,12 @@
 		<div class="description-content">
 			<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
 			<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
-			<div class="flex">
+			<div class="flex justify-center">
 				<img height="80" src="{% static 'img/cert1.png' %}" alt="certificado 1">
 				<img height="80" src="{% static 'img/cert2.png' %}" alt="certificado 2">
+				<img height="80" src="{% static 'img/anac.jpg' %}" alt="certificado 3">
+				<img height="80" src="{% static 'img/decea.jpg' %}" style="margin-left:20px;margin-right:10px;" alt="certificado 4">
+				<img height="80" src="{% static 'img/anatel.jpg' %}" alt="certificado 5">
 			</div>
 		</div>
 	</div>
@@ -51,6 +54,11 @@
 					<p class="light-text">{{ s.description_home }}</p>
 				</div>
 			{% endfor %}
+		</div>
+		<div class="flex-column full-w service-item_cta">
+			<form action="{% url 'services' %}">
+		        <button class="button">Saiba Mais</button>
+		    </form>
 		</div>
 	{% endif %}
 	{% if solutions %}

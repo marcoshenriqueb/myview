@@ -15,7 +15,7 @@
                 <div class="flex-column start service-page-item_content">
                     <span class="dark-label big">{{ s.name }}</span>
                     <ul>
-                        <li style="white-space:pre-wrap;" class="light-text">{{ s.description }}</li>
+                        <li style="white-space:pre-wrap;" class="light-text">{{ s.description|safe }}</li>
                     </ul>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                         <br>
                         <div style="width:30px;height:4px;background:#5bd7c5;margin-bottom:34px;"></div>
                         <ul>
-                            <li style="white-space:pre-wrap;" class="light-text">{{ s.description }}</li>
+                            <li style="white-space:pre-wrap;" class="light-text">{{ s.description|safe }}</li>
                         </ul>
                     </div>
                 </div>
