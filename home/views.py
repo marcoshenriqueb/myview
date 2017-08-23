@@ -8,7 +8,7 @@ from django.contrib import messages
 from django.core.exceptions import ValidationError
 from projects.models import Project, ProjectCategory
 from contents.models import Content
-from clients.models import Client
+from clients.models import Client, ClientLogos
 from courses.models import Course
 from services.models import Service, Solution
 from .forms import LeadForm, ContactForm
@@ -20,6 +20,7 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
         context['clients'] = Client.objects.all()
+        context['clientlogos'] = ClientLogos.objects.all()
         context['projects'] = Project.objects.filter(home=1)
         context['services'] = Service.objects.all()
         context['solutions'] = Solution.objects.filter(home=1)

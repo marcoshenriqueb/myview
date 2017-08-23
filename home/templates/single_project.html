@@ -10,6 +10,9 @@
     </div>
     <div class="single_project-container full-w">
         <div class="flex-column single_project-photos">
+            {% if project.vimeo %}
+                <div class="single_project-video" data-id="{{ project.vimeo }}"></div>
+            {% endif %}
             {% for p in project.photos.all %}
                 <img src="{{ media_prefix }}{{ p.photo }}" width="160" alt="">
             {% endfor %}

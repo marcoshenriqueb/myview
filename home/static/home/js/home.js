@@ -56,6 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     adjustProjectContainers();
 
+    document.querySelectorAll('.single_project-video').forEach((el) => {
+        const player = new Vimeo(el, {
+            id: el.dataset.id,
+            width: el.offsetWidth.toFixed(0)
+        });
+    });
+
     // Vimeo lightbox
     document.querySelectorAll('.start-video').forEach((d) => {
         d.addEventListener('click', (e) => {

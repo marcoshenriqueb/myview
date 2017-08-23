@@ -9,8 +9,21 @@ class Client(models.Model):
     updated_at = models.DateTimeField("Atualizado em", auto_now=True, auto_now_add=False)
 
     class Meta:
-        verbose_name = 'Client'
+        verbose_name = 'Cliente'
         verbose_name_plural = 'Clientes'
 
     def __str__(self):
         return self.name
+
+
+class ClientLogos(models.Model):
+    name = models.CharField("Nome", max_length=255, null=True, blank=True)
+    logo = models.ImageField("Logo", upload_to='clientlogos/%Y/%m/%d/', max_length=255)
+    created_at = models.DateTimeField("Criado em", auto_now=False, auto_now_add=True)
+    updated_at = models.DateTimeField("Atualizado em", auto_now=True, auto_now_add=False)
+
+    class Meta:
+        verbose_name = 'Logo de Cliente'
+        verbose_name_plural = 'Logos de Clientes'
+
+
