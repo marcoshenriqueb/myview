@@ -124,6 +124,11 @@
 	{% if clients or clientlogos %}
 		<div class="flex-column testimonial-section">
 			<h2 class="title dark text-center">{{ content.titulo_depoimentos }}</h2>
+			<div class="flex justify-center wrap full-w" style="padding:60px 20%;">
+				{% for l in clientlogos %}
+					<img height="60" style="margin:20px;" src="{{ media_prefix }}{{ l.logo }}" alt="">
+				{% endfor %}
+			</div>
 			<div class="clients-container justify-center">
 				<div id="testimonial-container" class="flex">
 					{% for c in clients %}
@@ -139,11 +144,6 @@
 			<div class="full-w flex client-controls justify-center">
 				<span id="testimonial-control-left" class="fa fa-2x fa-angle-left"></span>
 				<span id="testimonial-control-right" class="fa fa-2x fa-angle-right"></span>
-			</div>
-			<div class="flex justify-center wrap full-w" style="padding:60px 20% 0;">
-				{% for l in clientlogos %}
-					<img height="60" style="margin:20px;" src="{{ media_prefix }}{{ l.logo }}" alt="">
-				{% endfor %}
 			</div>
 		</div>
 	{% endif %}
