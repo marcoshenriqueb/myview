@@ -124,7 +124,7 @@
 	{% if clients or clientlogos %}
 		<div class="flex-column testimonial-section">
 			<h2 class="title dark text-center">{{ content.titulo_depoimentos }}</h2>
-			<div class="flex justify-center wrap full-w" style="padding:60px 20%;">
+			<div class="flex justify-center wrap full-w clientlogos">
 				{% for l in clientlogos %}
 					<img height="60" style="margin:20px;" src="{{ media_prefix }}{{ l.logo }}" alt="">
 				{% endfor %}
