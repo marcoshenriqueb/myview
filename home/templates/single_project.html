@@ -21,6 +21,14 @@
             <h2 class="subtitle dark text-center">{{ project.name }}</h2>
             <span class="dark-label">Descrição</span>
             <p class="light-text">{{ project.description }}</p>
+            <div class="full-w flex space-between">
+                {% if prev %}
+                    <a href="{% url 'project' prev.id %}"><span class="dark-text fa fa-arrow-left"></span> Anterior</a>
+                {% endif %}
+                {% if next %}
+                    <a href="{% url 'project' next.id %}">Próximo <span class="dark-text fa fa-arrow-right"></span></a>
+                {% endif %}
+            </div>
         </div>
     </div>
     

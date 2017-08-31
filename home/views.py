@@ -68,6 +68,13 @@ class SingleProjectPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(SingleProjectPageView, self).get_context_data(**kwargs)
         context['project'] = Project.objects.get(pk=kwargs['id'])
+        projects = Project.objects.all()
+        for i, p in enumerate(projects):
+            if p.id == context['project'].id:
+                if i != 0:
+                    context['prev'] = projects[i-1]
+                if i != len(projects) - 1:
+                    context['next'] = projects[i + 1]
         content = {}
         for c in Content.objects.all():
             content[c.key.lower().replace(" ", "_")] = c.text
