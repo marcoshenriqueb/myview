@@ -79,6 +79,10 @@
                         <ul>
                             <li style="white-space:pre-wrap;" class="light-text">{{ s.description }}</li>
                         </ul>
+                        <div class="margin-b"></div>
+                        {% if s.link %}
+		                    <a href="{{ s.link }}" target="_blank">Veja o vídeo <span class="dark-text fa fa-external-link-square"></span></a>
+	                    {% endif %}
                     </div>
                 </div>
             {% endfor %}
