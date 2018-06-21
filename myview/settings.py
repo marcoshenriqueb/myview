@@ -32,11 +32,11 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'home',
-    'services',
-    'projects',
+    'academy',
+    'audiovisual',
+    'enterprise',
+    'solutions',
     'contents',
-    'clients',
-    'courses',
     'sorl.thumbnail',
     'django_instagram',
     'django.contrib.admin',

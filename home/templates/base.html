@@ -31,21 +31,19 @@
                 </div>
                 <div class="header-nav">
                     <ul class="header-nav_items flex">
-                        <a href="{% url 'home' %}"><li>Home</li></a>
-                        <a href="{% url 'services' %}"><li>Soluções e Serviços</li></a>
-                        <a href="{% url 'projects' %}"><li>Portfólio</li></a>
-                        <a href="{% url 'courses' %}"><li>MyView Academy</li></a>     
-                        <a href="{% url 'contact' %}"><li>Contato</li></a>
+                        <a href="{% url 'audiovisual' %}"><li>Imagens</li></a>
+                        <a href="{% url 'enterprise' %}"><li>Enterprise</li></a>
+                        <a href="{% url 'solutions' %}"><li>Soluções</li></a>
+                        <a href="{% url 'academy' %}"><li>Academy</li></a>
                     </ul>
                     <span id="mobile-menu" class="fa fa-bars"></span>
                 </div>
             </div>
             <ul class="header-nav_mobile-items flex-column">
-                <a href="{% url 'home' %}"><li>Home</li></a>
-                <a href="{% url 'services' %}"><li>Soluções e Serviços</li></a>
-                <a href="{% url 'projects' %}"><li>Portfólio</li></a>
-                <a href="{% url 'courses' %}"><li>MyView Academy</li></a>
-                <a href="{% url 'contact' %}"><li>Contato</li></a>
+                <a href="{% url 'audiovisual' %}"><li>Imagens</li></a>
+                <a href="{% url 'enterprise' %}"><li>Enterprise</li></a>
+                <a href="{% url 'solutions' %}"><li>Soluções</li></a>
+                <a href="{% url 'academy' %}"><li>Academy</li></a>
             </ul>
         </header>
 
@@ -70,8 +68,7 @@
                 <span class="light-label pre-footer_item_title">{{ content.titulo_contato_rodape }}</span>
                 <span class="light-text white"><span class="fa fa-map-marker"></span> {{ content.endereco_contato }}</span>
                 <span class="light-text white"><span class="fa fa-phone"></span> {{ content.telefone }}</span>
-                <span class="light-text white margin-b"><span class="fa fa-envelope-o"></span> {{ content.email }}</span>
-                <a href="{% url 'contact' %}" class="o-button-reverse footer-logo_btn">Contato</a>     
+                <span class="light-text white margin-b"><span class="fa fa-envelope-o"></span> {{ content.email }}</span>   
             </div>
         </div>
         <footer class="footer flex justify-center white">

@@ -5,6 +5,7 @@ primarycolor = #59d7c5
 secondarycolor = #59d7c5
 filtercolor = rgba(43,73,103,0.4)
 lightbg = #f7f7f7
+mediumbg = #e5e5e5
 
 *
     box-sizing: border-box
@@ -195,6 +196,71 @@ a
     top: 0
     left: 0
 
+.module-title
+    height 350px
+    position relative
+    background-position center center
+    background-size cover
+    .title
+        z-index: 100
+    &.audiovisual
+        background-image url('/static/img/audiovisual-background.jpg');
+    &.enterprise
+        background-image url('/static/img/enterprise-background.jpg');
+    &.solutions
+        background-image url('/static/img/solutions-background.jpg');
+    &.academy
+        background-image url('/static/img/academy-background.jpg');
+    
+.module-item_container
+    flex-wrap wrap
+    padding 5rem 0 0
+
+.module-item_cta
+    margin-bottom 3rem
+
+.modules-group
+    padding 0
+
+.module-description
+    padding 7rem 1rem 2rem 1rem
+
+.module-description-content
+    max-width 650px
+    .subtitle
+        margin-top -3rem
+
+.module
+    overflow hidden
+    text-align center
+    padding 2rem 3rem 0 3rem
+
+.module-header
+    text-align center
+    padding 0 2rem 2rem 2rem
+    width 100%
+
+.module-card
+    height 300px
+    border-radius 21px 21px 0 0
+    border-style solid 
+    border-width 3px 3px 0 3px
+    &.primary
+        border-color #01ABF1
+    &.secondary
+        border-color #168B40
+    &.terciary
+        border-color #9765B3
+    &.quaternary
+        border-color #EF8C20
+
+.module-logo
+    overflow hidden
+    display block
+    margin-left auto
+    margin-right auto
+    width 80%
+
 @media(min-width:768px)
     .page-title
         justify-content flex-start
@@ -205,15 +271,14 @@ a
         &.big
             font-size: 45px
 
-
 @import './home/form'
 @import './home/header'
 @import './home/top'
 @import './home/description'
-@import './home/services'
 @import './home/project'
 @import './home/clients'
 @import './home/contact'
+@import './audiovisual'
 @import './footer'
 @import './projects'
 @import './single-project'

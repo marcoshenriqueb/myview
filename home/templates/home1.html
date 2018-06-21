@@ -1,0 +1,217 @@
+{% extends "base.html" %}
+{% block title %}
+	MyView - Home
+{% endblock %}
+{% block content %}
+    {% load static %}
+    {% get_media_prefix as media_prefix %}
+	<div class="top triangles text-center">
+		<div class="video-container">
+			<div class="filter"></div>
+			<video autoplay loop class="full-w" muted>
+				<source src="{% static 'videos/myview3.mp4' %}" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+				<source src="{% static 'videos/myview3.webm' %}" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+			</video>
+		</div>
+		<div class="flex-column min-full-size justify-center">
+			<h1 class="title big">{{ content.titulo }}</h1>
+			<p class="subtitle">{{ content.subtitulo }}</p>
+			<div class="flex top-icons">
+				<a target="_blank" href="https://www.facebook.com/myviewdrones/"><i class="o-icon-button fa fa-facebook"></i></a>
+				<a target="_blank" href="https://www.instagram.com/myviewbr/"><i class="o-icon-button fa fa-instagram"></i></a>
+				<a target="_blank" href="https://vimeo.com/user51265724"><i class="o-icon-button fa fa-vimeo"></i></a>
+				<a target="_blank" href="https://www.youtube.com/channel/UC1JyE1jSGskez0KXZax8wLg"><i class="o-icon-button fa fa-youtube-play"></i></a>
+			</div>
+			<a href="{% url 'contact' %}" class="o-button-reverse">Contato</a>
+		</div>
+	</div>
+	<div class="flex justify-center section-title_container" style="">
+		<h2 class="title dark text-center">{{ content.titulo_quem_somos }}</h2>
+	</div>
+	<div class="flex-column justify-center description">
+		<div class="description-content">
+			<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
+			<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
+			<div class="flex justify-center wrap">
+				<img height="80" src="{% static 'img/cert1.png' %}" alt="certificado 1">
+				<img height="80" src="{% static 'img/cert2.png' %}" alt="certificado 2">
+				<img height="80" src="{% static 'img/anac.jpg' %}" alt="certificado 3">
+				<img height="80" src="{% static 'img/decea.jpg' %}" style="margin-left:20px;margin-right:10px;" alt="certificado 4">
+				<img height="80" src="{% static 'img/anatel.jpg' %}" alt="certificado 5">
+			</div>
+		</div>
+	</div>
+	{% if services %}
+		<div class="flex paraxify justify-center triangles service-title">
+			<div class="overlay"></div>
+			<h2 class="title white big text-center">{{ content.titulo_servicos }}</h2>
+		</div>
+		<div class="flex full-w service-item_container">
+			{% for s in services %}
+				<div class="flex-column service-item">
+					<img src="{{ media_prefix }}{{ s.icon }}" alt="{{ s.name }}">
+					<span class="dark-label">{{ s.name }}</span>
+					<p class="light-text">{{ s.description_home }}</p>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="flex-column full-w service-item_cta">
+			<form action="{% url 'services' %}">
+		        <button class="button">Saiba Mais</button>
+		    </form>
+		</div>
+	{% endif %}
+	{% if solutions %}
+        <div class="flex justify-center bg-light section-title_container">
+            <h2 class="title dark text-center">{{ content.titulo_solucoes }}</h2>
+        </div>
+        <div class="flex-column full-w bg-light">
+            {% for s in solutions %}
+                <div class="flex special-service full-w">
+                    <div class="special-service_img">
+                        <div class="special-service_overlay"></div>
+                        <img src="{{ media_prefix }}{{ s.photo }}" alt="{{ s.name }}">
+                    </div>
+                    <div class="flex-column start special-service_content">
+                        <span class="dark-label big">{{ s.name }}</span>
+                        <br>
+                        <div style="width:30px;height:4px;background:#5bd7c5;margin-bottom:34px;"></div>
+                        <ul>
+                            <li style="white-space:pre-wrap;" class="light-text">{{ s.description }}</li>
+                        </ul>
+                        <div class="margin-b"></div>
+                        {% if s.link %}
+		                    <a href="{{ s.link }}" target="_blank">Veja o vídeo <span class="dark-text fa fa-external-link-square"></span></a>
+	                    {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+	{% if projects %}
+		<div class="flex justify-center section-title_container">
+			<h2 class="title dark text-center">{{ content.titulo_projetos }}</h2>
+		</div>
+		<div class="flex-column full-w">
+			{% for p in projects %}
+				<div class="project-container full-w">
+					<div class="project_big img-container">
+						<img src="{{ media_prefix }}{{ p.photos.all.0.photo }}" alt="">
+					</div>
+					<div class="flex-column project_small">
+						<div class="full-w img-container">
+							<div class="project_small-overlay flex justify-center">
+								<div class="flex">
+									{% if p.vimeo %}
+										<a href="" data-id="{{ p.vimeo }}" class="button-square start-video">Ampliar</a>
+									{% else %}
+										<a href="" data-src="{{ p.photos.all.1.photo }}" class="button-square start-photo">Ampliar</a>
+									{% endif %}
+									<a href="{% url 'project' p.id %}" class="button-square">Info</a>
+								</div>
+							</div>
+							<img src="{{ media_prefix }}{{ p.photos.all.1.photo }}" alt="">
+						</div>
+						<div class="flex-column start full-w project_description">
+							<span class="dark-label">{{ p.name }}</span>
+							{% if p.short_description %}
+								<p class="light-text">{{ p.short_description }}</p>
+							{% else %}
+								<p class="light-text">{{ p.description|truncatechars:255 }}</p>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+	{% if clients or clientlogos %}
+		<div class="flex-column testimonial-section">
+			<h2 class="title dark text-center">{{ content.titulo_depoimentos }}</h2>
+			<div class="flex justify-center wrap full-w clientlogos">
+				{% for l in clientlogos %}
+					<img class="clientlogos_img" style="margin:20px;" src="{{ media_prefix }}{{ l.logo }}" alt="">
+				{% endfor %}
+			</div>
+			<div class="clients-container justify-center">
+				<div id="testimonial-container" class="flex">
+					{% for c in clients %}
+						<div class="testimonial-content flex-column client text-center">
+							<img class="client-img" src="{{ media_prefix }}{{ c.photo }}" alt="">
+							<p class="dark-label client-name">{{ c.name }}</p>
+							<span class="light-text">{{ c.area }}</span>
+							<p class="testimonial">{{ c.testimonial }}</p>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="full-w flex client-controls justify-center">
+				<span id="testimonial-control-left" class="fa fa-2x fa-angle-left"></span>
+				<span id="testimonial-control-right" class="fa fa-2x fa-angle-right"></span>
+			</div>
+		</div>
+	{% endif %}
+	<div id="contact" class="newsletter-container bg-light flex-column full-w">
+		<form action="{% url 'lead' %}" method="POST" class="flex justify-center full-w">
+			<span class="dark-label">{{ content.label_newsletter }}</span>
+			{% csrf_token %}
+			<input type="text" placeholder="Digite o seu email" name="email">
+			<button class="button">Enviar</button>
+		</form>
+		{% if messages %}
+		    {% for message in messages %}
+			    <span class="dark-label">{{ message }}</span>
+		    {% endfor %}
+		{% endif %}
+	</div>
+{% endblock %}
+<div class="flex-column full-w">
+    <div class="flex modules-group bg-light full-w">
+      <div class="module">
+        <div class="flex-column module-header">
+					<h2 class="title dark text-center">Imagens</h2>
+					<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel aut incidunt culpa aliquam, dolorem eveniet reiciendis magni repellat voluptas quam sint! Rerum quidem amet quibusdam optio officiis deserunt explicabo.</p>
+				</div>
+        <a href="/audiovisual/">
+			<div class="module-card primary">
+			<img src="/static/img/audiovisualLogo.png" alt="audiovisualLogo" class="module-logo">
+			</div>
+        </a>
+      </div>
+      <div class="module secondary">
+        <div class="flex-column module-header">
+					<h2 class="title dark text-center">Enterprise</h2>
+					<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel aut incidunt culpa aliquam, dolorem eveniet reiciendis magni repellat voluptas quam sint! Rerum quidem amet quibusdam optio officiis deserunt explicabo.</p>
+				</div>
+        <a href="/enterprise/">
+          <div class="module-card secondary">
+						<img src="/static/img/enterpriseLogo.png" alt="enterpriseLogo" class="module-logo">
+					</div>
+        </a>
+      </div>
+    </div>
+    <div class="flex modules-group bg-dark full-w">
+      <div class="module terciary">
+        <div class="flex-column module-header">
+					<h2 class="title dark text-center">Soluções</h2>
+					<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel aut incidunt culpa aliquam, dolorem eveniet reiciendis magni repellat voluptas quam sint! Rerum quidem amet quibusdam optio officiis deserunt explicabo.</p>
+				</div>
+        <a href="/solucoes/">
+          <div class="module-card terciary">
+						<img src="/static/img/solutionsLogo.png" alt="solutionsLogo" class="module-logo">
+					</div>
+        </a>
+      </div>
+      <div class="module quaternary">
+        <div class="flex-column module-header">
+					<h2 class="title dark text-center">Academy</h2>
+					<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel aut incidunt culpa aliquam, dolorem eveniet reiciendis magni repellat voluptas quam sint! Rerum quidem amet quibusdam optio officiis deserunt explicabo.</p>
+				</div>
+        <a href="/academy/">
+          <div class="module-card quaternary">
+						<img src="/static/img/academyLogo.png" alt="academyLogo" class="module-logo">
+					</div>
+        </a>
+      </div>
+    </div>
+  </div>
