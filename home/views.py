@@ -7,6 +7,7 @@ from django.core.mail import send_mail
 from django.contrib import messages
 from django.core.exceptions import ValidationError
 from audiovisual.models import Client, Service, Equipament
+from enterprise.models import Industry, IndustryService, Benefit
 from contents.models import Content
 from .forms import LeadForm, ContactForm
 import json
@@ -41,9 +42,9 @@ class EnterpriseView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(EnterpriseView, self).get_context_data(**kwargs)
-        context['clients'] = Client.objects.all()
-        context['services'] = Service.objects.all()
-        context['equipaments'] = Equipament.objects.all()
+        context['industrys'] = Industry.objects.all()
+        context['industryservices'] = IndustryService.objects.all()
+        context['benefits'] = Benefit.objects.all()
         content = {}
         for c in Content.objects.all():
             content[c.key.lower().replace(" ", "_")] = c.text

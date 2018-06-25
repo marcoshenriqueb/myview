@@ -24,18 +24,8 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex justify-center section-title_container" style="">
-		<h2 class="title dark text-center">{{ content.titulo_quem_somos }}</h2>
-	</div>
-	<div class="flex-column justify-center description">
-		<div class="description-content">
-			<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
-			<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
-		</div>
-	</div>
-	<div class="flex paraxify justify-center triangles module-title audiovisual">
-		<div class="overlay"></div>
-		<h2 class="title white big text-center">Imagens</h2>
+	<div class="flex justify-center module-item_container">
+		<img src="{% static 'img/audiovisual-logo.png' %}" alt="audiovisual-logo">
 	</div>
 	<div class="flex-column justify-center module-description">
 		<div class="module-description-content">
@@ -45,27 +35,25 @@
 	</div>
 	<div class="flex-column full-w module-item_cta">
 		<form action="{% url 'audiovisual' %}">
-				<button class="button">Saiba Mais</button>
+				<button class="button audiovisual">Saiba Mais</button>
 		</form>
 	</div>
-	<div class="flex paraxify justify-center triangles module-title enterprise">
-		<div class="overlay"></div>
-		<h2 class="title white big text-center">Enterprise</h2>
+	<div class="flex justify-center module-item_container bg-light">
+		<img src="{% static 'img/enterprise-logo.png' %}" alt="enterprise-logo">
 	</div>
-	<div class="flex-column justify-center module-description">
+	<div class="flex-column justify-center module-description bg-light">
 		<div class="module-description-content">
 			<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
 			<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
 		</div>
 	</div>
-	<div class="flex-column full-w module-item_cta">
+	<div class="flex-column full-w module-item_cta bg-light">
 		<form action="{% url 'enterprise' %}">
-				<button class="button">Saiba Mais</button>
+				<button class="button enterprise">Saiba Mais</button>
 		</form>
 	</div>
-	<div class="flex paraxify justify-center triangles module-title solutions">
-		<div class="overlay"></div>
-		<h2 class="title white big text-center">Soluções</h2>
+	<div class="flex justify-center module-item_container">
+		<img src="{% static 'img/solutions-logo.png' %}" alt="solutions-logo">
 	</div>
 	<div class="flex-column justify-center module-description">
 		<div class="module-description-content">
@@ -75,22 +63,21 @@
 	</div>
 	<div class="flex-column full-w module-item_cta">
 		<form action="{% url 'solutions' %}">
-				<button class="button">Saiba Mais</button>
+				<button class="button solutions">Saiba Mais</button>
 		</form>
 	</div>
-	<div class="flex paraxify justify-center triangles module-title academy">
-		<div class="overlay"></div>
-		<h2 class="title white big text-center">Academy</h2>
+	<div class="flex justify-center module-item_container bg-light">
+		<img src="{% static 'img/academy-logo.png' %}" alt="academy-logo">
 	</div>
-	<div class="flex-column justify-center module-description">
+	<div class="flex-column justify-center module-description bg-light">
 		<div class="module-description-content">
 			<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
 			<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
 		</div>
 	</div>
-	<div class="flex-column full-w module-item_cta">
+	<div class="flex-column full-w module-item_cta bg-light">
 		<form action="{% url 'academy' %}">
-				<button class="button">Saiba Mais</button>
+				<button class="button academy">Saiba Mais</button>
 		</form>
 	</div>
 {% endblock %}

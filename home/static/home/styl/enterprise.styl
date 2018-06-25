@@ -1,0 +1,18 @@
+.industry-item_container
+    flex-wrap wrap
+
+.industry-item
+    text-align: center
+    padding: 2rem
+    width: 100%
+    &:hover, &:active, &:focus
+        i
+            color: secondarycolor
+
+    i
+        margin-bottom: 2rem
+        transition: color 400ms ease
+
+@media(min-width: 768px)
+    .industry-item
+        width: 25%

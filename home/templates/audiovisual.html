@@ -19,20 +19,18 @@
       <a href="{% url 'home' %}" class="o-button-reverse">Contato</a>
     </div>
   </div>
-  <div class="flex justify-center section-title_container" style="">
-		<h2 class="title dark text-center">{{ content.titulo_quem_somos }}</h2>
-	</div>
-	<div class="flex-column justify-center description">
+	<div class="flex-column justify-center audiovisual-description">
 		<div class="description-content">
-			<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
+			<h4 class="">{{ content.subtitulo_quem_somos }}</h4>
 			<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
 		</div>
   </div>
   {% if services %}
-        <div class="flex justify-center bg-light section-title_container">
-            <h2 class="title dark text-center">Serviços</h2>
+        <div class="flex paraxify justify-center triangles module-title audiovisual">
+            <div class="overlay"></div>
+            <h2 class="title white big text-center">Serviços</h2>
         </div>
-        <div class="flex-column full-w bg-light">
+        <div class="flex-column full-w">
             {% for s in services %}
                 <div class="flex special-service full-w">
                     <div class="special-service_img">
@@ -56,8 +54,8 @@
         </div>
     {% endif %}
     {% if equipaments %}
-		<div class="flex justify-center section-title_container">
-			<h2 class="title text-center">Nossos Equipamentos</h2>
+		<div class="flex bg-light justify-center section-title_container">
+			<h2 class="title text-center">Equipamentos para audiovisual</h2>
 		</div>
 		<div class="flex full-w bg-light equipament-container">
       {% for e in equipaments %}
@@ -80,6 +78,16 @@
           </div>
         </div>
 			{% endfor %}
+		</div>
+  {% endif %}
+  {% if clients %}
+		<div class="flex-column testimonial-section">
+			<h2 class="title dark text-center">Nossos Clientes</h2>
+			<div class="flex justify-center wrap full-w clientlogos">
+				{% for c in clients %}
+					<img class="clientlogos_img" style="margin:20px;" src="{{ media_prefix }}{{ c.logo }}" alt="">
+				{% endfor %}
+			</div>
 		</div>
 	{% endif %}
 {% endblock %}
