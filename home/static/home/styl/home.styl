@@ -174,6 +174,12 @@ a
         border-top: 18px solid #fff
         border-bottom: 0
 
+    &.black
+        &:after
+            bottom: 0
+            border-bottom: 18px solid #000
+            border-top: 0
+
 .overlay
     position: absolute
     background: linear-gradient(180deg, filtercolor, filtercolor)
@@ -200,21 +206,36 @@ a
     top: 0
     left: 0
 
-.module-title
-    height 350px
-    position relative
-    background-position center center
-    background-size cover
+.section-module
+    background-color: black
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-end
+    padding: 1.5rem 2.5rem
+
+.module
+    height 180px
+    width 100%
+    margin .4rem 0rem
+    background-position: center
+    background-size: 100%
+    border: 2px solid black
+    border-radius: 2px
+    display: flex
+    justify-content: center
+    align-items: center
+
     .title
         z-index: 100
     &.audiovisual
-        background-image url('/static/img/audiovisual-background.jpg');
+        background-image url('/static/img/back_audiovisual.jpg');
     &.enterprise
-        background-image url('/static/img/enterprise-background.jpg');
+        background-image url('/static/img/back_enterprise.jpg');
     &.solutions
-        background-image url('/static/img/solutions-background.jpg');
+        background-image url('/static/img/back_solutions.jpg');
     &.academy
-        background-image url('/static/img/academy-background.jpg');
+        background-image url('/static/img/back_academy.jpg');
     
 .module-item_container
     flex-wrap wrap
@@ -223,47 +244,32 @@ a
 .module-item_cta
     padding-bottom 3rem
 
-.modules-group
-    padding 0
-
-.module-description
-    padding 7rem 1rem 2rem 1rem
-
-.module-description-content
-    max-width 650px
-    .subtitle
-        margin-top -3rem
-
-.module
-    overflow hidden
-    text-align center
-    padding 2rem 3rem 0 3rem
-
-.module-header
-    text-align center
-    padding 0 2rem 2rem 2rem
-    width 100%
-
-.module-card
-    height 300px
-    border-radius 21px 21px 0 0
-    border-style solid 
-    border-width 3px 3px 0 3px
-    &.primary
-        border-color #01ABF1
-    &.secondary
-        border-color #168B40
-    &.terciary
-        border-color #9765B3
-    &.quaternary
-        border-color #EF8C20
+.module-button
+    background-color: rgba(0,0,0,0)
+    border: 0
+    padding 20.5px 86px
+    &.audiovisual
+        background-image: url('/static/img/button_audiovisual0.png');
+    &.enterprise
+        background-image: url('/static/img/button_enterprise0.png');
+    &.solutions
+        background-image: url('/static/img/button_solutions0.png');
+    &.academy
+        background-image: url('/static/img/button_academy0.png');
 
 .module-logo
-    overflow hidden
-    display block
-    margin-left auto
-    margin-right auto
-    width 80%
+    width: 370px
+    display flex
+    justify-content: center
+    margin: 0rem 2rem 0rem 4rem
+
+.module-description
+    color: white
+    white-space: pre-wrap
+
+@media(max-width:800px)
+    .light-text
+        font-size: 12px
 
 @media(min-width:768px)
     .page-title
@@ -284,6 +290,7 @@ a
 @import './home/contact'
 @import './audiovisual'
 @import './enterprise'
+@import './academy'
 @import './footer'
 @import './projects'
 @import './single-project'

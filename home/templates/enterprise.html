@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "contactbase.html" %}
 {% block title %}
 	MyView - Enterprise
 {% endblock %}
@@ -26,55 +26,62 @@
 		</div>
   </div>
   {% if industrys %}
-        <div class="flex paraxify justify-center triangles module-title audiovisual">
-            <div class="overlay"></div>
-            <h2 class="title white big text-center">Serviços</h2>
+    <div class="flex paraxify justify-center triangles module-title enterprise">
+        <div class="overlay"></div>
+        <h2 class="title white big text-center">Tipos de Industrias</h2>
+    </div>
+    <div class="flex full-w industry-item_container">
+      {% for i in industrys %}
+        <div class="flex-column industry-item">
+          <img src="{{ media_prefix }}{{ i.icon }}" alt="{{ i.name }}">
+          <span class="dark-label">{{ i.name }}</span>
+          <p class="light-text">{{ i.description }}</p>
         </div>
-        <div class="flex full-w industry-item_container">
-          {% for i in industrys %}
-            <div class="flex-column industry-item">
-              <img src="{{ media_prefix }}{{ i.icon }}" alt="{{ i.name }}">
-              <span class="dark-label">{{ i.name }}</span>
-              <p class="light-text">{{ i.description }}</p>
-            </div>
-          {% endfor %}
-        </div>
-    {% endif %}
-    {% if equipaments %}
-		<div class="flex bg-light justify-center section-title_container">
-			<h2 class="title text-center">Equipamentos para audiovisual</h2>
-		</div>
-		<div class="flex full-w bg-light equipament-container">
-      {% for e in equipaments %}
-        <div class="wrapper">
-          <div class="equipament-card">
-            <div class="top-section flex justify-center">
-              <img class="top-image" src="{{ media_prefix }}{{ e.photo }}" alt="{{ e.name }}">
-            </div>
-            <div class="bottom-section flex justify-center">
-              <h2>{{ e.name }}</h2>
-            </div>
-          </div>
-          <div class="inside">
-            <div class="icon">
-              <img src="/static/img/information.png" alt="information" />
-            </div>
-            <div class="contents flex justify-center">
-              <p style="white-space:pre-wrap;">{{ e.description }}</p>
-            </div>
-          </div>
-        </div>
-			{% endfor %}
-		</div>
+      {% endfor %}
+    </div>
   {% endif %}
-  {% if clients %}
-		<div class="flex-column testimonial-section">
-			<h2 class="title dark text-center">Nossos Clientes</h2>
-			<div class="flex justify-center wrap full-w clientlogos">
-				{% for c in clients %}
-					<img class="clientlogos_img" style="margin:20px;" src="{{ media_prefix }}{{ c.logo }}" alt="">
-				{% endfor %}
-			</div>
-		</div>
-	{% endif %}
+  {% if industryservices %}
+    <div class="flex bg-light justify-center section-title_container">
+      <h2 class="title text-center">Serviços</h2>
+    </div>
+    <div class="flex-column full-w bg-light">
+      {% for s in industryservices %}
+        <div class="flex special-service full-w">
+          <div class="special-service_img">
+            <div class="special-service_overlay"></div>
+            <img src="{{ media_prefix }}{{ s.icon }}" alt="{{ s.name }}">
+          </div>
+          <div class="flex-column start special-service_content">
+            <span class="dark-label big">{{ s.name }}</span>
+            <br>
+            <div style="width:30px;height:4px;background:#5bd7c5;margin-bottom:34px;"></div>
+            <ul>
+              <li style="white-space:pre-wrap;" class="light-text">{{ s.description }}</li>
+            </ul>
+            <div class="margin-b"></div>
+            {% if s.link %}
+              <a href="{{ s.link }}" target="_blank">Veja o vídeo <span class="dark-text fa fa-external-link-square"></span></a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% if benefits %}
+    <div class="flex justify-center section-title_container">
+      <h2 class="title text-center">Benefícios</h2>
+    </div>
+    <div class="flex justify-center full-w benefit-item_container">
+      {% for b in benefits %}
+        <div class="singleservice flex-column">  
+          <img class="benefit-image" src="{{ media_prefix }}{{ b.icon }}" alt="{{ b.name }}">
+          <span class="dark-label">{{ b.name }}</span>
+          <p class="light-text">{{ b.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endblock %}
+{% block formtag %}
+  "{% url 'enterprise' %}"
 {% endblock %}

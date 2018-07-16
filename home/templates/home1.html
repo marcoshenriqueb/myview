@@ -1,3 +1,59 @@
+<div class="flex justify-center module-item_container">
+	<img src="{% static 'img/audiovisual-logo.png' %}" alt="audiovisual-logo">
+</div>
+<div class="flex-column justify-center module-description">
+	<div class="module-description-content">
+		<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
+		<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
+	</div>
+</div>
+<div class="flex-column full-w module-item_cta">
+	<form action="{% url 'audiovisual' %}">
+			<button class="button audiovisual">Saiba Mais</button>
+	</form>
+</div>
+<div class="flex justify-center module-item_container bg-light">
+	<img src="{% static 'img/enterprise-logo.png' %}" alt="enterprise-logo">
+</div>
+<div class="flex-column justify-center module-description bg-light">
+	<div class="module-description-content">
+		<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
+		<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
+	</div>
+</div>
+<div class="flex-column full-w module-item_cta bg-light">
+	<form action="{% url 'enterprise' %}">
+			<button class="button enterprise">Saiba Mais</button>
+	</form>
+</div>
+<div class="flex justify-center module-item_container">
+	<img src="{% static 'img/solutions-logo.png' %}" alt="solutions-logo">
+</div>
+<div class="flex-column justify-center module-description">
+	<div class="module-description-content">
+		<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
+		<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
+	</div>
+</div>
+<div class="flex-column full-w module-item_cta">
+	<form action="{% url 'solutions' %}">
+			<button class="button solutions">Saiba Mais</button>
+	</form>
+</div>
+<div class="flex justify-center module-item_container bg-light">
+	<img src="{% static 'img/academy-logo.png' %}" alt="academy-logo">
+</div>
+<div class="flex-column justify-center module-description bg-light">
+	<div class="module-description-content">
+		<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
+		<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
+	</div>
+</div>
+<div class="flex-column full-w module-item_cta bg-light">
+	<form action="{% url 'academy' %}">
+			<button class="button academy">Saiba Mais</button>
+	</form>
+</div>
 {% extends "base.html" %}
 {% block title %}
 	MyView - Home
@@ -58,7 +114,7 @@
 		<div class="flex-column full-w service-item_cta">
 			<form action="{% url 'services' %}">
 		        <button class="button">Saiba Mais</button>
-		    </form>
+		  </form>
 		</div>
 	{% endif %}
 	{% if solutions %}
@@ -165,53 +221,3 @@
 		{% endif %}
 	</div>
 {% endblock %}
-<div class="flex-column full-w">
-    <div class="flex modules-group bg-light full-w">
-      <div class="module">
-        <div class="flex-column module-header">
-					<h2 class="title dark text-center">Imagens</h2>
-					<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel aut incidunt culpa aliquam, dolorem eveniet reiciendis magni repellat voluptas quam sint! Rerum quidem amet quibusdam optio officiis deserunt explicabo.</p>
-				</div>
-        <a href="/audiovisual/">
-			<div class="module-card primary">
-			<img src="/static/img/audiovisualLogo.png" alt="audiovisualLogo" class="module-logo">
-			</div>
-        </a>
-      </div>
-      <div class="module secondary">
-        <div class="flex-column module-header">
-					<h2 class="title dark text-center">Enterprise</h2>
-					<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel aut incidunt culpa aliquam, dolorem eveniet reiciendis magni repellat voluptas quam sint! Rerum quidem amet quibusdam optio officiis deserunt explicabo.</p>
-				</div>
-        <a href="/enterprise/">
-          <div class="module-card secondary">
-						<img src="/static/img/enterpriseLogo.png" alt="enterpriseLogo" class="module-logo">
-					</div>
-        </a>
-      </div>
-    </div>
-    <div class="flex modules-group bg-dark full-w">
-      <div class="module terciary">
-        <div class="flex-column module-header">
-					<h2 class="title dark text-center">Soluções</h2>
-					<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel aut incidunt culpa aliquam, dolorem eveniet reiciendis magni repellat voluptas quam sint! Rerum quidem amet quibusdam optio officiis deserunt explicabo.</p>
-				</div>
-        <a href="/solucoes/">
-          <div class="module-card terciary">
-						<img src="/static/img/solutionsLogo.png" alt="solutionsLogo" class="module-logo">
-					</div>
-        </a>
-      </div>
-      <div class="module quaternary">
-        <div class="flex-column module-header">
-					<h2 class="title dark text-center">Academy</h2>
-					<p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel aut incidunt culpa aliquam, dolorem eveniet reiciendis magni repellat voluptas quam sint! Rerum quidem amet quibusdam optio officiis deserunt explicabo.</p>
-				</div>
-        <a href="/academy/">
-          <div class="module-card quaternary">
-						<img src="/static/img/academyLogo.png" alt="academyLogo" class="module-logo">
-					</div>
-        </a>
-      </div>
-    </div>
-  </div>

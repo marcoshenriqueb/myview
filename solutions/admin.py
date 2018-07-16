@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import PortfolioClient
+from .models import Project
 
-@admin.register(PortfolioClient)
-class PortfolioClientAdmin(admin.ModelAdmin):
+@admin.register(Project)
+class ProjectAdmin(admin.ModelAdmin):
     exclude = ('user',)
     list_display = ('id', 'name', 'created_at', 'updated_at')
     list_display_links = ('name',)

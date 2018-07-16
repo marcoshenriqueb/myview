@@ -5,7 +5,7 @@
 {% block content %}
 	{% load static %}
 	{% get_media_prefix as media_prefix %}
-	<div class="top triangles text-center">
+	<div class="top triangles black text-center">
 		<div class="video-container">
 			<div class="filter"></div>
 			<video autoplay loop class="full-w" muted>
@@ -24,60 +24,42 @@
 			</div>
 		</div>
 	</div>
-	<div class="flex justify-center module-item_container">
-		<img src="{% static 'img/audiovisual-logo.png' %}" alt="audiovisual-logo">
-	</div>
-	<div class="flex-column justify-center module-description">
-		<div class="module-description-content">
-			<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
-			<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
+	<div class="section-module">
+		<div class="module audiovisual">
+			<form action="{% url 'audiovisual' %}">
+				<button class="module-button audiovisual"></button>
+			</form>
+			<div class="module-logo">
+				<img src="{% static 'img/logo_audiovisual.png' %}" alt="logo_audiovisual">
+			</div>
+			<p class="module-description light-text">{{ content.descricao_audiovisual }}</p>
 		</div>
-	</div>
-	<div class="flex-column full-w module-item_cta">
-		<form action="{% url 'audiovisual' %}">
-				<button class="button audiovisual">Saiba Mais</button>
-		</form>
-	</div>
-	<div class="flex justify-center module-item_container bg-light">
-		<img src="{% static 'img/enterprise-logo.png' %}" alt="enterprise-logo">
-	</div>
-	<div class="flex-column justify-center module-description bg-light">
-		<div class="module-description-content">
-			<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
-			<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
+		<div class="module enterprise">
+			<a href="{% url 'enterprise' %}">
+				<button class="module-button enterprise"></button>
+			</a>
+			<div class="module-logo">
+				<img src="{% static 'img/logo_enterprise.png' %}" alt="logo_enterprise">
+			</div>
+			<p class="module-description light-text">{{ content.descricao_enterprise }}</p>
 		</div>
-	</div>
-	<div class="flex-column full-w module-item_cta bg-light">
-		<form action="{% url 'enterprise' %}">
-				<button class="button enterprise">Saiba Mais</button>
-		</form>
-	</div>
-	<div class="flex justify-center module-item_container">
-		<img src="{% static 'img/solutions-logo.png' %}" alt="solutions-logo">
-	</div>
-	<div class="flex-column justify-center module-description">
-		<div class="module-description-content">
-			<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
-			<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
+		<div class="module solutions">
+			<form action="{% url 'solutions' %}">
+				<button class="module-button solutions"></button>
+			</form>
+			<div class="module-logo">
+				<img src="{% static 'img/logo_solutions.png' %}" alt="logo_solutions">
+			</div>
+			<p class="module-description light-text">{{ content.descricao_solucoes }}</p>
 		</div>
-	</div>
-	<div class="flex-column full-w module-item_cta">
-		<form action="{% url 'solutions' %}">
-				<button class="button solutions">Saiba Mais</button>
-		</form>
-	</div>
-	<div class="flex justify-center module-item_container bg-light">
-		<img src="{% static 'img/academy-logo.png' %}" alt="academy-logo">
-	</div>
-	<div class="flex-column justify-center module-description bg-light">
-		<div class="module-description-content">
-			<h4 class="subtitle">{{ content.subtitulo_quem_somos }}</h4>
-			<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
+		<div class="module academy">
+			<form action="{% url 'academy' %}">
+				<button class="module-button academy"></button>
+			</form>
+			<div class="module-logo">
+				<img src="{% static 'img/logo_academy.png' %}" alt="logo_academy">
+			</div>
+			<p class="module-description light-text">{{ content.descricao_academy }}</p>
 		</div>
-	</div>
-	<div class="flex-column full-w module-item_cta bg-light">
-		<form action="{% url 'academy' %}">
-				<button class="button academy">Saiba Mais</button>
-		</form>
 	</div>
 {% endblock %}

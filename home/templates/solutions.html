@@ -1,0 +1,56 @@
+{% extends "contactbase.html" %}
+{% block title %}
+	MyView - Soluções
+{% endblock %}
+{% block content %}
+  {% load static %}
+  {% get_media_prefix as media_prefix %}
+  <div class="top triangles text-center">
+    <div class="video-container">
+      <div class="filter"></div>
+      <video autoplay loop class="full-w" muted>
+        <source src="{% static 'videos/myview3.mp4' %}" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+        <source src="{% static 'videos/myview3.webm' %}" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+      </video>
+    </div>
+    <div class="flex-column min-full-size justify-center">
+      <h1 class="title big">{{ content.titulo }}</h1>
+      <p class="subtitle">{{ content.subtitulo }}</p>
+      <a href="{% url 'home' %}" class="o-button-reverse">Contato</a>
+    </div>
+  </div>
+	<div class="flex-column justify-center audiovisual-description">
+		<div class="description-content">
+			<h4 class="">{{ content.subtitulo_quem_somos }}</h4>
+			<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
+		</div>
+  </div>
+  {% if projects %}
+        <div class="flex paraxify justify-center triangles module-title solutions">
+            <div class="overlay"></div>
+            <h2 class="title white big text-center">Nossas Soluções</h2>
+        </div>
+        <div class="flex-column full-w">
+            {% for p in projects %}
+              <div class="flex special-service full-w">
+                  <div class="special-service_img">
+                      <div class="special-service_overlay"></div>
+                      <img src="{{ media_prefix }}{{ p.photo }}" alt="{{ p.name }}">
+                  </div>
+                  <div class="flex-column start special-service_content">
+                      <span class="dark-label big">{{ p.name }}</span>
+                      <br>
+                      <div style="width:30px;height:4px;background:#5bd7c5;margin-bottom:34px;"></div>
+                      <ul>
+                          <li style="white-space:pre-wrap;" class="light-text">{{ p.description }}</li>
+                      </ul>
+                      <div class="margin-b"></div>
+                      {% if p.link %}
+                      <a href="{{ p.link }}" target="_blank">Veja o vídeo <span class="dark-text fa fa-external-link-square"></span></a>
+                    {% endif %}
+                  </div>
+              </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
