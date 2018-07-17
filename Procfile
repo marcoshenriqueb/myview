@@ -1,2 +1,1 @@
-
-web: gunicorn myproject.wsgiweb: gun
+web: gunicorn myview.wsgi
