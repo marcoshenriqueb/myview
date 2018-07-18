@@ -22,7 +22,7 @@ input
 .button, .o-button-reverse, .o-button    
     font-family: 'Montserrat', sans-serif
 
-.button, .icon-button, .o-button-reverse, .o-button, .o-icon-button
+.button, .icon-button, .o-button-reverse, .o-button, .o-icon-button, .button-contact-send
     color white
     letter-spacing 1px
     font-size 13px
@@ -69,6 +69,26 @@ input
         border-color darkcolor
         color white
 
+.button-contact-send
+    padding 15px 28px
+    border-radius 30px
+    &.audiovisual
+        background-color audiovisualcolor
+        border 1px solid audiovisualcolor
+    &.enterprise
+        background-color enterprisecolor
+        border 1px solid enterprisecolor
+    &.solutions
+        background-color solutionscolor
+        border 1px solid solutionscolor
+    &.academy
+        background-color academycolor
+        border 1px solid academycolor
+    &:hover, &:active, &:focus
+        background-color darkcolor
+        border-color darkcolor
+        color white
+
 .o-button
     font-family: 'Raleway', sans-serif
     text-transform capitalize
@@ -88,6 +108,23 @@ input
     &:hover, &:active, &:focus
         color secondarycolor
         border-color secondarycolor
+    &.audiovisual
+        &:hover, &:active, &:focus
+            color audiovisualcolor
+            border-color audiovisualcolor
+    &.enterprise
+        &:hover, &:active, &:focus
+            color enterprisecolor
+            border-color enterprisecolor
+    &.solutions
+        &:hover, &:active, &:focus
+            color solutionscolor
+            border-color solutionscolor
+    &.academy
+        &:hover, &:active, &:focus
+            color academycolor
+            border-color academycolor
+    
 
 .icon-button, .o-icon-button
     border-radius 25px
@@ -104,6 +141,22 @@ input
     &:hover, &:active, &:focus
         background-color: secondarycolor
         border-color secondarycolor
+    &.audiovisual
+        &:hover, &:active, &:focus
+            background-color audiovisualcolor
+            border-color audiovisualcolor
+    &.enterprise
+        &:hover, &:active, &:focus
+            background-color enterprisecolor
+            border-color enterprisecolor
+    &.solutions
+        &:hover, &:active, &:focus
+            background-color solutionscolor
+            border-color solutionscolor
+    &.academy
+        &:hover, &:active, &:focus
+            background-color academycolor
+            border-color academycolor
 
 .o-icon-button
     color white
@@ -112,6 +165,22 @@ input
     &:hover, &:active, &:focus
         color secondarycolor
         border-color secondarycolor
+    &.audiovisual
+        &:hover, &:active, &:focus
+            color audiovisualcolor
+            border-color audiovisualcolor
+    &.enterprise
+        &:hover, &:active, &:focus
+            color enterprisecolor
+            border-color enterprisecolor
+    &.solutions
+        &:hover, &:active, &:focus
+            color solutionscolor
+            border-color solutionscolor
+    &.academy
+        &:hover, &:active, &:focus
+            color academycolor
+            border-color academycolor
 
 .button-square
     font-family: 'Montserrat', sans-serif

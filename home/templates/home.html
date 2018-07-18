@@ -26,38 +26,46 @@
 	</div>
 	<div class="section-module">
 		<div class="module audiovisual">
-			<form action="{% url 'audiovisual' %}">
+			<a class="module-button-container" href="{% url 'audiovisual' %}">
 				<button class="module-button audiovisual"></button>
-			</form>
+			</a>
 			<div class="module-logo">
-				<img src="{% static 'img/logo_audiovisual.png' %}" alt="logo_audiovisual">
+				<a href="{% url 'audiovisual' %}">
+					<img class="logo-image" src="{% static 'img/logo_audiovisual.png' %}" alt="logo_audiovisual">
+				</a>
 			</div>
 			<p class="module-description light-text">{{ content.descricao_audiovisual }}</p>
 		</div>
 		<div class="module enterprise">
-			<a href="{% url 'enterprise' %}">
+			<a class="module-button-container" href="{% url 'enterprise' %}">
 				<button class="module-button enterprise"></button>
 			</a>
 			<div class="module-logo">
-				<img src="{% static 'img/logo_enterprise.png' %}" alt="logo_enterprise">
+				<a href="{% url 'enterprise' %}">
+					<img class="logo-image" src="{% static 'img/logo_enterprise.png' %}" alt="logo_enterprise">
+				</a>
 			</div>
 			<p class="module-description light-text">{{ content.descricao_enterprise }}</p>
 		</div>
 		<div class="module solutions">
-			<form action="{% url 'solutions' %}">
+			<a class="module-button-container" href="{% url 'solutions' %}">
 				<button class="module-button solutions"></button>
-			</form>
+			</a>
 			<div class="module-logo">
-				<img src="{% static 'img/logo_solutions.png' %}" alt="logo_solutions">
+				<a href="{% url 'solutions' %}">
+					<img class="logo-image" src="{% static 'img/logo_solutions.png' %}" alt="logo_solutions">
+				</a>
 			</div>
 			<p class="module-description light-text">{{ content.descricao_solucoes }}</p>
 		</div>
 		<div class="module academy">
-			<form action="{% url 'academy' %}">
+			<a class="module-button-container" href="{% url 'academy' %}">
 				<button class="module-button academy"></button>
-			</form>
+			</a>
 			<div class="module-logo">
-				<img src="{% static 'img/logo_academy.png' %}" alt="logo_academy">
+				<a href="{% url 'academy' %}">
+					<img class="logo-image" src="{% static 'img/logo_academy.png' %}" alt="logo_academy">
+				</a>
 			</div>
 			<p class="module-description light-text">{{ content.descricao_academy }}</p>
 		</div>

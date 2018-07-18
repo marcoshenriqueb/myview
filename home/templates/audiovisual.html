@@ -1,4 +1,4 @@
-{% extends "contactbase.html" %}
+{% extends "base.html" %}
 {% block title %}
 	MyView - Imagens
 {% endblock %}
@@ -16,7 +16,7 @@
     <div class="flex-column min-full-size justify-center">
       <h1 class="title big">{{ content.titulo }}</h1>
       <p class="subtitle">{{ content.subtitulo }}</p>
-      <a href="{% url 'home' %}" class="o-button-reverse">Contato</a>
+      <a href="{% url 'home' %}" class="o-button-reverse audiovisual">Contato</a>
     </div>
   </div>
 	<div class="flex-column justify-center audiovisual-description">
@@ -40,7 +40,7 @@
                     <div class="flex-column start special-service_content">
                         <span class="dark-label big">{{ s.name }}</span>
                         <br>
-                        <div style="width:30px;height:4px;background:#5bd7c5;margin-bottom:34px;"></div>
+                        <div style="width:30px;height:4px;background:#29aae2;margin-bottom:34px;"></div>
                         <ul>
                             <li style="white-space:pre-wrap;" class="light-text">{{ s.description }}</li>
                         </ul>
@@ -89,5 +89,43 @@
 				{% endfor %}
 			</div>
 		</div>
-	{% endif %}
+  {% endif %}
+  <div class="flex bg-light page-title">
+      <h2 class="subtitle dark text-center">Contato</h2>
+  </div>
+  <div id="contact" class="contact-container flex start full-w">
+      <div class="contact-info flex-column start">
+          <h2 class="dark text-center" style="text-transform:uppercase;margin-top:0;">{{ content.titulo_contato }}</h2>
+          <span class="light-text margin-b">{{ content.texto_contato }}</span>
+          <span class="dark detail-text">{{ content.endereco_contato }}</span>
+          <span class="dark detail-text">{{ content.endereco_contato_complemento }}</span>
+          <span class="dark detail-text margin-b">{{ content.telefone }} / {{ content.email }}</span>
+          <div class="flex contact-info_icons">
+              <a target="_blank" href="https://www.facebook.com/myviewdrones/"><i class="icon-button audiovisual fa fa-facebook"></i></a>
+              <a target="_blank" href="https://www.instagram.com/myviewbr/"><i class="icon-button audiovisual fa fa-instagram"></i></a>
+              <a target="_blank" href="https://vimeo.com/user51265724"><i class="icon-button audiovisual fa fa-vimeo"></i></a>
+              <a target="_blank" href="https://www.youtube.com/channel/UC1JyE1jSGskez0KXZax8wLg"><i class="icon-button audiovisual fa fa-youtube-play"></i></a>
+          </div>
+      </div>
+      <form action="{% url formurl %}" method="POST" class="contact-form">
+          {% csrf_token %}
+          <div class="flex half-form_container">
+              {{ form.name }}
+              {{ form.phone }}
+          </div>
+          {{ form.email }}
+          {{ form.message }}
+          <button class="button-contact-send audiovisual margin-b">Enviar</button><br>
+          {% if form.errors %}
+              {% for error, value in form.errors.items %}
+                  <span style="color:red;" class="light-text margin-b"><span style="text-transform:capitalize;">{{ error }}</span>: {{ value.as_text }}</span><br>
+              {% endfor %}
+          {% endif %}
+          {% if messages %}
+              {% for message in messages %}
+                  <span class="dark-label margin-b">{{ message }}</span>
+              {% endfor %}
+          {% endif %}
+      </form>
+  </div>
 {% endblock %}
