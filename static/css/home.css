@@ -735,6 +735,7 @@ a.big {
       -ms-flex-pack: center;
           justify-content: center;
   margin: 0rem 2rem 0rem 4rem;
+  pointer-events: none;
 }
 .module-description {
   color: #fff;
@@ -762,6 +763,7 @@ a.big {
   }
   .module-logo {
     margin: 0rem 0.5rem 0rem 0.5rem;
+    pointer-events: auto;
   }
 }
 @media (max-width: 420px) {
@@ -1102,6 +1104,11 @@ input {
 .header a:focus,
 .header a:active {
   color: #29aae2;
+}
+.header a:hover.home,
+.header a:focus.home,
+.header a:active.home {
+  color: #111;
 }
 .header a:hover.audiovisual,
 .header a:focus.audiovisual,

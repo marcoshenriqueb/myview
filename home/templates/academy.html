@@ -14,15 +14,15 @@
       </video>
     </div>
     <div class="flex-column min-full-size justify-center">
-      <h1 class="title big">{{ content.titulo }}</h1>
-      <p class="subtitle">{{ content.subtitulo }}</p>
+      <h1 class="title big">{{ content.titulo_academy }}</h1>
+      <p class="subtitle">{{ content.subtitulo_academy }}</p>
       <a href="{% url 'home' %}" class="o-button-reverse academy">Contato</a>
     </div>
   </div>
 	<div class="flex-column justify-center audiovisual-description">
 		<div class="description-content">
-			<h4 class="">{{ content.subtitulo_quem_somos }}</h4>
-			<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos }}</p>
+			<h4 class="">{{ content.subtitulo_quem_somos_academy }}</h4>
+			<p style="white-space:pre-wrap;color:black;" class="light-text">{{ content.texto_quem_somos_academy }}</p>
 		</div>
   </div>
   {% if courses %}
@@ -55,7 +55,6 @@
         </div>
         <div id="contact" class="contact-container flex start full-w">
             <div class="contact-info flex-column start">
-                <h2 class="dark text-center" style="text-transform:uppercase;margin-top:0;">{{ content.titulo_contato }}</h2>
                 <span class="light-text margin-b">{{ content.texto_contato }}</span>
                 <span class="dark detail-text">{{ content.endereco_contato }}</span>
                 <span class="dark detail-text">{{ content.endereco_contato_complemento }}</span>
